@@ -280,9 +280,15 @@
       dial.appendChild(svg);
       dial.appendChild(h("span", { class: "gauge__pct", text: val + "%" }));
 
+      // VIBGYOR: each dial takes the next hue. Purely decorative — every dial
+      // carries its own number and caption, so no meaning rests on colour.
       var card = h("button", {
         class: "gauge",
-        attrs: { type: "button", "aria-label": detail }
+        attrs: {
+          type: "button",
+          "aria-label": detail,
+          style: "--dial:var(--gauge-" + ((idx % 4) + 1) + ")"
+        }
       }, [
         dial,
         h("span", { class: "gauge__label", text: item.label }),
