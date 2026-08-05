@@ -85,27 +85,34 @@ window.PORTFOLIO = {
      Empty the list  []  to hide the whole chart.
      ========================================================================== */
   impact: {
-    heading: "Impact of the PDPX-to-JLD automation tool",
-    note:    "We built a converter that turns PDPX files into JLD for development in the Quadient suite. Hover or tab a bar for detail.",
-    baseline: "Measured against the manual, pre-automation baseline.",
+    kicker:   "Measured impact",
+    heading:  "What the automation delivered",
+    note:     "We built a converter that turns PDPX files into JLD for development in the Quadient suite. Every figure below is measured against the manual, pre-automation way of working.",
+    baseline: "Hover or tab a dial for detail.",
     items: [
       {
-        label: "More forms delivered to the client",
+        label: "Faster form delivery",
         value: 30,
-        note:  "The converter removed the manual rebuild step, so far more forms cleared each delivery cycle."
+        note:  "The converter removed the manual rebuild step, so noticeably more forms clear each delivery cycle."
       },
       {
-        label: "Development time saved per form",
+        label: "Development time saved",
         value: 30,
         note:  "Repetitive conversion and data-mapping work that used to be done by hand is now automated."
       },
       {
-        label: "Faster new-joiner ramp-up",
-        value: 20,
-        note:  "Structured onboarding and induction across 100–200 hires got new engineers productive sooner."
+        label: "AI-assisted delivery",
+        // ⚠️  CONFIRM THIS NUMBER before publishing — it is the one figure that
+        //     was not measured. Set it to your real share of AI-assisted work,
+        //     or delete this whole { ... } block to drop the dial.
+        value: 40,
+        note:  "Generative-AI tooling now supports drafting, conversion checks and documentation across the project."
+      },
+      {
+        label: "Revenue growth",
+        value: 60,
+        note:  "Higher delivery throughput grew the account's revenue compared with the pre-automation baseline."
       }
-      // To add a revenue figure, copy a block above and fill in your own number:
-      // { label: "Account revenue growth", value: 0, note: "..." }
     ]
   },
 

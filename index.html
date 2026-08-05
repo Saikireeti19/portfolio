@@ -59,6 +59,7 @@
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
+      <a href="#impact">Impact</a>
       <a href="#skills">Capabilities</a>
       <a href="#education">Credentials</a>
       <a href="#contact">Contact</a>
@@ -84,6 +85,7 @@
     <a href="#about">About</a>
     <a href="#work">Work</a>
     <a href="#experience">Experience</a>
+    <a href="#impact">Impact</a>
     <a href="#skills">Capabilities</a>
     <a href="#education">Credentials</a>
     <a href="#beyond">Beyond Work</a>
@@ -129,32 +131,6 @@
     <div class="shell">
       <ul class="metrics" data-metrics aria-label="Key achievements"></ul>
 
-      <!-- project impact: horizontal bars (magnitude comparison, one hue) -->
-      <figure class="impact" data-impact hidden>
-        <div class="impact__head">
-          <figcaption class="impact__title" data-impact-heading></figcaption>
-          <button class="impact__toggle" type="button" data-impact-table-toggle
-                  aria-expanded="false" aria-controls="impactTable">View as table</button>
-        </div>
-
-        <p class="impact__note" data-impact-note></p>
-
-        <div class="impact__rows" data-impact-rows role="img" aria-label=""></div>
-
-        <div class="impact__axis" data-impact-axis aria-hidden="true"></div>
-
-        <p class="impact__readout" data-impact-readout aria-live="polite"></p>
-
-        <div class="impact__tablewrap" id="impactTable" hidden>
-          <table class="impact__table">
-            <caption class="sr-only">Improvement delivered by the automation tool</caption>
-            <thead>
-              <tr><th scope="col">Measure</th><th scope="col">Improvement</th></tr>
-            </thead>
-            <tbody data-impact-tbody></tbody>
-          </table>
-        </div>
-      </figure>
     </div>
   </section>
 
@@ -195,8 +171,39 @@
     </div>
   </section>
 
+  <!-- ===================== MEASURED IMPACT ===================== -->
+  <section class="section section--alt" id="impact" aria-labelledby="impactHeading" data-impact hidden>
+    <div class="shell">
+      <header class="section__head" data-reveal>
+        <p class="kicker" data-impact-kicker></p>
+        <h2 class="section__title" id="impactHeading" data-impact-heading>Measured impact</h2>
+        <p class="section__lede" data-impact-note></p>
+      </header>
+
+      <figure class="gauges">
+        <div class="gauges__grid" data-impact-rows role="img" aria-label=""></div>
+
+        <figcaption class="gauges__foot">
+          <p class="gauges__readout" data-impact-readout aria-live="polite"></p>
+          <button class="gauges__toggle" type="button" data-impact-table-toggle
+                  aria-expanded="false" aria-controls="impactTable">View as table</button>
+        </figcaption>
+
+        <div class="gauges__tablewrap" id="impactTable" hidden>
+          <table class="gauges__table">
+            <caption class="sr-only">Improvement delivered by the automation tool</caption>
+            <thead>
+              <tr><th scope="col">Measure</th><th scope="col">Improvement</th></tr>
+            </thead>
+            <tbody data-impact-tbody></tbody>
+          </table>
+        </div>
+      </figure>
+    </div>
+  </section>
+
   <!-- ===================== SKILLS ===================== -->
-  <section class="section section--alt" id="skills" aria-labelledby="skillsHeading">
+  <section class="section" id="skills" aria-labelledby="skillsHeading">
     <div class="shell">
       <header class="section__head" data-reveal>
         <p class="kicker" data-skills-kicker></p>
@@ -207,7 +214,7 @@
   </section>
 
   <!-- ===================== EDUCATION & CERTS ===================== -->
-  <section class="section" id="education" aria-labelledby="eduHeading">
+  <section class="section section--alt" id="education" aria-labelledby="eduHeading">
     <div class="shell">
       <header class="section__head" data-reveal>
         <p class="kicker" data-edu-kicker></p>
@@ -230,7 +237,7 @@
   </section>
 
   <!-- ===================== BEYOND WORK ===================== -->
-  <section class="section section--alt" id="beyond" aria-labelledby="beyondHeading" data-beyond-section>
+  <section class="section" id="beyond" aria-labelledby="beyondHeading" data-beyond-section>
     <div class="shell">
       <header class="section__head" data-reveal>
         <p class="kicker" data-beyond-kicker></p>

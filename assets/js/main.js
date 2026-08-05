@@ -212,108 +212,132 @@
     });
   })();
 
-  /* ------------------------- project impact chart -------------------------
-     Horizontal bars = magnitude comparison. Every value is a % improvement,
-     so one hue is used for all bars (a ramp would double-encode bar length).
-     Values appear as visible direct labels AND in a table view, so colour is
-     never the only way to read the chart.                                   */
-  (function renderImpact() {
-    var fig = q("[data-impact]");
-    if (!fig) return;
+  /* --------------------------- impact gauges ------------------------------
+     Each dial is a METER: one value against 100%, with a same-ramp track.
+     One hue for all four on purpose - four distinct hues cannot clear the
+     colourblind all-pairs floor in dark mode. Every value also appears as a
+     visible number, a caption and a table row, so colour never carries
+     meaning on its own.                                                     */
+  (function renderGauges() {
+    var section = q("[data-impact]");
+    if (!section) return;
 
     var cfg = C.impact || {};
     var items = list(cfg.items).filter(function (i) {
       return i && has(i.label) && Number(i.value) > 0;
     });
-    // A single bar is not a chart - it is a stat tile. Need at least two.
-    if (items.length < 2) { fig.remove(); return; }
+    if (!items.length) { section.remove(); return; }
 
+    setText("[data-impact-kicker]", cfg.kicker);
     setText("[data-impact-heading]", cfg.heading);
     setText("[data-impact-note]", cfg.note);
 
-    var rows      = q("[data-impact-rows]");
-    var axis      = q("[data-impact-axis]");
-    var readout   = q("[data-impact-readout]");
-    var tbody     = q("[data-impact-tbody]");
-    var toggle    = q("[data-impact-table-toggle]");
-    var tableWrap = q("#impactTable");
+    var grid    = q("[data-impact-rows]");
+    var readout = q("[data-impact-readout]");
+    var tbody   = q("[data-impact-tbody]");
+    var toggle  = q("[data-impact-table-toggle]");
+    var wrap    = q("#impactTable");
 
     var defaultNote = has(cfg.baseline) ? cfg.baseline : "";
     if (readout) readout.textContent = defaultNote;
 
-    // Axis maximum: round up past the biggest value so bars have headroom.
-    var maxVal = Math.max.apply(null, items.map(function (i) { return Number(i.value); }));
-    var axisMax = Math.max(10, Math.ceil((maxVal * 1.2) / 10) * 10);
+    var R = 42;                          // ring radius in the 0 0 100 100 viewBox
+    var CIRC = 2 * Math.PI * R;          // 263.894...
 
-    if (axis) {
-      axis.appendChild(h("span", { text: "0" }));
-      axis.appendChild(h("span", { text: axisMax + "% improvement" }));
+    if (grid) {
+      grid.setAttribute("aria-label", "Improvement delivered by the automation tool: " +
+        items.map(function (i) { return i.label + " " + Number(i.value) + " percent"; }).join(", ") + ".");
     }
 
-    // text alternative for the whole chart
-    if (rows) {
-      rows.setAttribute("aria-label",
-        "Improvement delivered by the automation tool: " + items.map(function (i) {
-          return i.label + " up " + Number(i.value) + " percent";
-        }).join(", ") + ".");
-    }
+    items.forEach(function (item, idx) {
+      var val = Math.max(0, Math.min(100, Number(item.value)));
+      var detail = item.label + " · " + val + "%" + (has(item.note) ? " — " + item.note : "");
 
-    items.forEach(function (item) {
-      var val = Number(item.value);
-      var detail = item.label + " · +" + val + "%" + (has(item.note) ? " — " + item.note : "");
+      // ---- the dial (SVG). Rotated -90deg in CSS so it starts at 12 o'clock.
+      var svgNS = "http://www.w3.org/2000/svg";
+      var svg = document.createElementNS(svgNS, "svg");
+      svg.setAttribute("viewBox", "0 0 100 100");
+      svg.setAttribute("aria-hidden", "true");
+      svg.setAttribute("focusable", "false");
 
-      var fill = h("span", { class: "impact__fill", attrs: { style: "width:0%" } });
+      var disc = document.createElementNS(svgNS, "circle");
+      disc.setAttribute("class", "gauge__disc");
+      disc.setAttribute("cx", "50"); disc.setAttribute("cy", "50"); disc.setAttribute("r", "31");
 
-      var row = h("button", {
-        class: "impact__row",
+      var track = document.createElementNS(svgNS, "circle");
+      track.setAttribute("class", "gauge__track");
+      track.setAttribute("cx", "50"); track.setAttribute("cy", "50"); track.setAttribute("r", String(R));
+
+      var fill = document.createElementNS(svgNS, "circle");
+      fill.setAttribute("class", "gauge__fill");
+      fill.setAttribute("cx", "50"); fill.setAttribute("cy", "50"); fill.setAttribute("r", String(R));
+      fill.setAttribute("stroke-dasharray", CIRC.toFixed(2));
+      fill.setAttribute("stroke-dashoffset", CIRC.toFixed(2));   // starts empty
+
+      svg.appendChild(disc); svg.appendChild(track); svg.appendChild(fill);
+
+      var dial = h("span", { class: "gauge__dial" });
+      dial.appendChild(svg);
+      dial.appendChild(h("span", { class: "gauge__pct", text: val + "%" }));
+
+      var card = h("button", {
+        class: "gauge",
         attrs: { type: "button", "aria-label": detail }
       }, [
-        h("span", { class: "impact__label", text: item.label }),
-        h("span", { class: "impact__value", text: "+" + val + "%" }),
-        h("span", { class: "impact__track" }, [fill])
+        dial,
+        h("span", { class: "gauge__label", text: item.label }),
+        has(item.note) ? h("span", { class: "gauge__note", text: item.note }) : null
       ]);
 
       function activate()   { if (readout) readout.textContent = detail; }
       function deactivate() { if (readout) readout.textContent = defaultNote; }
-      row.addEventListener("mouseenter", activate);
-      row.addEventListener("mouseleave", deactivate);
-      row.addEventListener("focus", activate);
-      row.addEventListener("blur", deactivate);
+      card.addEventListener("mouseenter", activate);
+      card.addEventListener("mouseleave", deactivate);
+      card.addEventListener("focus", activate);
+      card.addEventListener("blur", deactivate);
 
-      if (rows) rows.appendChild(row);
+      if (grid) grid.appendChild(card);
 
-      // grow the bar in when it scrolls into view (instant if motion is reduced
-      // or the tab is hidden, so a bar is never stuck at zero width)
-      var target = Math.min(100, (val / axisMax) * 100) + "%";
-      function grow() { fill.style.width = target; }
+      // ---- sweep the ring in when it scrolls into view. Never leave it empty:
+      //      reduced motion, a hidden tab or no observer all draw it instantly.
+      var offset = CIRC * (1 - val / 100);
+      function draw() { fill.setAttribute("stroke-dashoffset", offset.toFixed(2)); }
+
       if (reduceMotion || document.hidden || !("IntersectionObserver" in window)) {
-        grow();
+        draw();
       } else {
         var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) { if (e.isIntersecting) { grow(); io.disconnect(); } });
-        }, { threshold: 0.4 });
-        io.observe(row);
-        setTimeout(function () { if (fill.style.width === "0%") grow(); }, 1500);
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              setTimeout(draw, idx * 110);   // slight stagger across the row
+              io.disconnect();
+            }
+          });
+        }, { threshold: 0.35 });
+        io.observe(card);
+        setTimeout(function () {
+          if (fill.getAttribute("stroke-dashoffset") === CIRC.toFixed(2)) draw();
+        }, 2000);
       }
 
       if (tbody) {
         tbody.appendChild(h("tr", {}, [
           h("td", { text: item.label }),
-          h("td", { text: "+" + val + "%" })
+          h("td", { text: val + "%" })
         ]));
       }
     });
 
-    if (toggle && tableWrap) {
+    if (toggle && wrap) {
       toggle.addEventListener("click", function () {
-        var open = tableWrap.hidden;
-        tableWrap.hidden = !open;
+        var open = wrap.hidden;
+        wrap.hidden = !open;
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
         toggle.textContent = open ? "Hide table" : "View as table";
       });
     }
 
-    fig.hidden = false;
+    section.hidden = false;
   })();
 
   /* ------------------------------ about ---------------------------------- */

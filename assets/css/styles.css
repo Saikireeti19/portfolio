@@ -40,8 +40,9 @@
   --series-1:#2a78d6;
   --series-2:#eb6834;
   --series-3:#1baf7a;
-  /* single-hue bar fill (magnitude charts) */
+  /* single-hue mark fill + its same-ramp (lighter) meter track */
   --bar-fill:var(--accent);
+  --gauge-track:#dde4f6;
 }
 
 html[data-theme="dark"]{
@@ -70,6 +71,7 @@ html[data-theme="dark"]{
   --series-3:#199e70;
   /* the deep accent is too dark to read as a fill on a dark surface */
   --bar-fill:var(--accent-lift);
+  --gauge-track:#243052;
 }
 
 /* ----------------------------- reset ------------------------------------ */
@@ -314,63 +316,74 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
 .metric__suffix{font-size:.5em;font-weight:600;color:var(--accent-text)}
 .metric__label{margin-top:9px;font-size:.855rem;color:var(--muted);line-height:1.45}
 
-/* ----------------------------- project impact chart ---------------------
-   Horizontal bars = magnitude comparison, so ONE hue for every bar (a
-   value-ramp across nominal categories would double-encode bar length).
-   Every value is a % improvement, so all bars point the same way.
+/* ----------------------------- impact gauges ----------------------------
+   Each dial is a METER: one value against 100%, with a same-ramp track.
+   All four use ONE hue on purpose - four distinct hues cannot clear the
+   colourblind all-pairs floor in dark mode (violet vs blue measures dE 1.9
+   under protanopia), and hue carries no information here anyway: every dial
+   has its own visible number and caption.
    ------------------------------------------------------------------------ */
-.impact{margin:clamp(28px,4vw,42px) 0 0;padding:0}
-.impact__head{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between}
-.impact__title{font-size:.755rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.impact__toggle{
+.gauges{margin:0;padding:0}
+.gauges__grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(20px,3vw,34px);
+}
+.gauge{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  width:100%;padding:14px 8px;border-radius:var(--r-md);
+  cursor:default;
+  transition:background-color .25s var(--ease);
+}
+.gauge:hover,.gauge:focus-visible{background:var(--surface)}
+
+.gauge__dial{position:relative;width:100%;max-width:150px;aspect-ratio:1}
+.gauge__dial svg{width:100%;height:100%;display:block;transform:rotate(-90deg)}
+.gauge__track{fill:none;stroke:var(--gauge-track);stroke-width:9}
+.gauge__disc{fill:var(--surface-2);stroke:none}
+.gauge__fill{
+  fill:none;stroke:var(--bar-fill);stroke-width:9;stroke-linecap:round;
+  transition:stroke-dashoffset 1.1s var(--ease);
+}
+.gauge__pct{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-size:clamp(1.35rem,2.4vw,1.7rem);font-weight:700;letter-spacing:-.03em;
+  color:var(--ink);
+}
+.gauge__label{
+  margin-top:16px;font-size:.95rem;font-weight:700;letter-spacing:-.015em;
+  color:var(--ink);line-height:1.3;
+}
+.gauge__note{margin-top:7px;font-size:.855rem;color:var(--muted);line-height:1.45;max-width:26ch}
+
+.gauges__foot{
+  display:flex;flex-wrap:wrap;gap:10px 20px;align-items:baseline;
+  justify-content:space-between;margin-top:clamp(22px,3vw,32px);
+}
+.gauges__readout{font-size:.9rem;color:var(--muted);min-height:1.5em;flex:1 1 auto}
+.gauges__toggle{
   font-size:.82rem;font-weight:600;color:var(--accent-text);
   padding:4px 2px;border-bottom:1px solid transparent;
   transition:border-color .25s var(--ease);
 }
-.impact__toggle:hover{border-bottom-color:currentColor}
-.impact__note{margin-top:10px;font-size:.9rem;color:var(--muted);max-width:70ch}
+.gauges__toggle:hover{border-bottom-color:currentColor}
 
-.impact__rows{margin-top:18px;display:grid;gap:6px}
-.impact__row{
-  display:grid;grid-template-columns:minmax(0,1fr) auto;
-  gap:7px 14px;align-items:baseline;width:100%;
-  padding:8px 10px;margin-inline:-10px;border-radius:var(--r-sm);
-  text-align:left;cursor:default;
-  transition:background-color .25s var(--ease);
-}
-.impact__row:hover,.impact__row:focus-visible{background:var(--surface-2)}
-.impact__label{font-size:.92rem;font-weight:500;color:var(--ink-soft)}
-.impact__value{
-  font-size:1.02rem;font-weight:700;letter-spacing:-.02em;
-  color:var(--accent-text);white-space:nowrap;
-}
-/* thin mark, 4px rounded data-end, anchored to the left baseline */
-.impact__track{
-  grid-column:1 / -1;height:10px;border-radius:4px;
-  background:var(--surface-2);border:1px solid var(--line);overflow:hidden;
-}
-.impact__fill{
-  display:block;height:100%;border-radius:4px;
-  background:var(--bar-fill);
-  transition:width .9s var(--ease);
-}
-
-.impact__axis{
-  display:flex;justify-content:space-between;
-  margin-top:8px;font-size:.75rem;color:var(--muted);
-  font-variant-numeric:tabular-nums;
-}
-.impact__readout{margin-top:12px;font-size:.9rem;color:var(--muted);min-height:1.5em}
-
-.impact__tablewrap{margin-top:18px;overflow-x:auto}
-.impact__table{width:100%;border-collapse:collapse;font-size:.875rem}
-.impact__table th,.impact__table td{
+.gauges__tablewrap{margin-top:16px;overflow-x:auto}
+.gauges__table{width:100%;border-collapse:collapse;font-size:.875rem}
+.gauges__table th,.gauges__table td{
   text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);
   font-variant-numeric:tabular-nums;
 }
-.impact__table th{color:var(--muted);font-weight:600;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
-.impact__table td{color:var(--ink-soft)}
-.impact__table td:first-child{font-weight:500;color:var(--ink)}
+.gauges__table th{color:var(--muted);font-weight:600;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.gauges__table td{color:var(--ink-soft)}
+.gauges__table td:first-child{font-weight:500;color:var(--ink)}
+
+@media (max-width:900px){
+  .gauges__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+}
+@media (max-width:460px){
+  .gauges__grid{grid-template-columns:1fr}
+  .gauge__dial{max-width:132px}
+}
 
 .sr-only{
   position:absolute;width:1px;height:1px;padding:0;margin:-1px;
