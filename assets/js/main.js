@@ -42,6 +42,10 @@
   var basics   = C.basics   || {};
   var settings = C.settings || {};
 
+  // Declared up here because the chart renderer below needs it too.
+  var reduceMotion = !!(window.matchMedia
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
   /* ------------------------------ theme ---------------------------------- */
 
   var THEME_KEY = "sy-portfolio-theme";
@@ -208,96 +212,94 @@
     });
   })();
 
-  /* ------------------------ career split chart ---------------------------
-     Horizontal stacked bar = the correct form for part-to-whole. Every value
-     is shown as a visible direct label in the legend AND in a table view, so
-     colour is never the only way to read the chart.                        */
-  (function renderSplit() {
-    var fig = q("[data-split]");
+  /* ------------------------- project impact chart -------------------------
+     Horizontal bars = magnitude comparison. Every value is a % improvement,
+     so one hue is used for all bars (a ramp would double-encode bar length).
+     Values appear as visible direct labels AND in a table view, so colour is
+     never the only way to read the chart.                                   */
+  (function renderImpact() {
+    var fig = q("[data-impact]");
     if (!fig) return;
 
-    var cfg = C.careerSplit || {};
+    var cfg = C.impact || {};
     var items = list(cfg.items).filter(function (i) {
-      return i && has(i.label) && Number(i.months) > 0;
+      return i && has(i.label) && Number(i.value) > 0;
     });
+    // A single bar is not a chart - it is a stat tile. Need at least two.
     if (items.length < 2) { fig.remove(); return; }
 
-    var total = items.reduce(function (s, i) { return s + Number(i.months); }, 0);
-    if (!(total > 0)) { fig.remove(); return; }
+    setText("[data-impact-heading]", cfg.heading);
+    setText("[data-impact-note]", cfg.note);
 
-    setText("[data-split-heading]", cfg.heading);
+    var rows      = q("[data-impact-rows]");
+    var axis      = q("[data-impact-axis]");
+    var readout   = q("[data-impact-readout]");
+    var tbody     = q("[data-impact-tbody]");
+    var toggle    = q("[data-impact-table-toggle]");
+    var tableWrap = q("#impactTable");
 
-    var bar      = q("[data-split-bar]");
-    var legend   = q("[data-split-legend]");
-    var readout  = q("[data-split-readout]");
-    var tbody    = q("[data-split-tbody]");
-    var toggle   = q("[data-split-table-toggle]");
-    var tableWrap= q("#splitTable");
-
-    var defaultNote = has(cfg.note) ? cfg.note : "";
+    var defaultNote = has(cfg.baseline) ? cfg.baseline : "";
     if (readout) readout.textContent = defaultNote;
 
-    function pct(m) { return Math.round((Number(m) / total) * 100); }
-    function yrs(m) {
-      var y = Math.floor(m / 12), r = m % 12;
-      if (y && r) return y + "y " + r + "m";
-      if (y) return y + "y";
-      return r + "m";
+    // Axis maximum: round up past the biggest value so bars have headroom.
+    var maxVal = Math.max.apply(null, items.map(function (i) { return Number(i.value); }));
+    var axisMax = Math.max(10, Math.ceil((maxVal * 1.2) / 10) * 10);
+
+    if (axis) {
+      axis.appendChild(h("span", { text: "0" }));
+      axis.appendChild(h("span", { text: axisMax + "% improvement" }));
     }
 
     // text alternative for the whole chart
-    var alt = "Experience by employer: " + items.map(function (i) {
-      return i.label + " " + pct(i.months) + " percent";
-    }).join(", ") + ".";
-    if (bar) bar.setAttribute("aria-label", alt);
+    if (rows) {
+      rows.setAttribute("aria-label",
+        "Improvement delivered by the automation tool: " + items.map(function (i) {
+          return i.label + " up " + Number(i.value) + " percent";
+        }).join(", ") + ".");
+    }
 
-    items.forEach(function (item, idx) {
-      var slot = "var(--series-" + ((idx % 3) + 1) + ")";
-      var share = pct(item.months);
-      var detail = item.label + " · " + yrs(item.months) + " · " + share + "%" +
-                   (has(item.note) ? " — " + item.note : "");
+    items.forEach(function (item) {
+      var val = Number(item.value);
+      var detail = item.label + " · +" + val + "%" + (has(item.note) ? " — " + item.note : "");
 
-      // ---- bar segment (focusable, so keyboard shows the same as hover)
-      var seg = h("button", {
-        class: "split__seg",
-        attrs: {
-          type: "button",
-          style: "flex:" + item.months + " 1 0;--seg:" + slot,
-          "aria-label": detail
-        }
-      });
-      function activate() {
-        if (bar) bar.classList.add("is-hovering");
-        qa(".split__seg").forEach(function (s) { s.classList.remove("is-active"); });
-        seg.classList.add("is-active");
-        if (readout) readout.textContent = detail;
+      var fill = h("span", { class: "impact__fill", attrs: { style: "width:0%" } });
+
+      var row = h("button", {
+        class: "impact__row",
+        attrs: { type: "button", "aria-label": detail }
+      }, [
+        h("span", { class: "impact__label", text: item.label }),
+        h("span", { class: "impact__value", text: "+" + val + "%" }),
+        h("span", { class: "impact__track" }, [fill])
+      ]);
+
+      function activate()   { if (readout) readout.textContent = detail; }
+      function deactivate() { if (readout) readout.textContent = defaultNote; }
+      row.addEventListener("mouseenter", activate);
+      row.addEventListener("mouseleave", deactivate);
+      row.addEventListener("focus", activate);
+      row.addEventListener("blur", deactivate);
+
+      if (rows) rows.appendChild(row);
+
+      // grow the bar in when it scrolls into view (instant if motion is reduced
+      // or the tab is hidden, so a bar is never stuck at zero width)
+      var target = Math.min(100, (val / axisMax) * 100) + "%";
+      function grow() { fill.style.width = target; }
+      if (reduceMotion || document.hidden || !("IntersectionObserver" in window)) {
+        grow();
+      } else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { grow(); io.disconnect(); } });
+        }, { threshold: 0.4 });
+        io.observe(row);
+        setTimeout(function () { if (fill.style.width === "0%") grow(); }, 1500);
       }
-      function deactivate() {
-        if (bar) bar.classList.remove("is-hovering");
-        seg.classList.remove("is-active");
-        if (readout) readout.textContent = defaultNote;
-      }
-      seg.addEventListener("mouseenter", activate);
-      seg.addEventListener("mouseleave", deactivate);
-      seg.addEventListener("focus", activate);
-      seg.addEventListener("blur", deactivate);
-      if (bar) bar.appendChild(seg);
 
-      // ---- legend entry doubles as the visible direct label
-      if (legend) {
-        legend.appendChild(h("li", {}, [
-          h("span", { class: "split__swatch", attrs: { style: "--seg:" + slot, "aria-hidden": "true" } }),
-          h("b", { text: item.label }),
-          h("span", { class: "split__value", text: yrs(item.months) + " · " + share + "%" })
-        ]));
-      }
-
-      // ---- table row (the WCAG-clean twin)
       if (tbody) {
         tbody.appendChild(h("tr", {}, [
           h("td", { text: item.label }),
-          h("td", { text: String(item.months) }),
-          h("td", { text: share + "%" })
+          h("td", { text: "+" + val + "%" })
         ]));
       }
     });
@@ -624,9 +626,6 @@
   /* ======================================================================
      MOTION
      ====================================================================== */
-
-  var reduceMotion = !!(window.matchMedia
-    && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 
   /* ---- reveal on scroll ----
      Built defensively: content must NEVER stay invisible. IntersectionObserver

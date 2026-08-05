@@ -78,18 +78,34 @@ window.PORTFOLIO = {
 
 
   /* ==========================================================================
-     3b. CAREER SPLIT CHART  (the interactive bar under the metrics)
-     Shows how your total experience divides between employers.
-     "months" is just the number of months you spent there — the chart works
-     out the percentages itself. Empty the list  []  to hide the chart.
+     3b. PROJECT IMPACT CHART  (the interactive bars under the metrics)
+     Shows the measurable improvement delivered by the automation tool.
+     Every "value" is a PERCENTAGE IMPROVEMENT against the old way of working,
+     so every bar points the same direction: bigger = better.
+     Empty the list  []  to hide the whole chart.
      ========================================================================== */
-  careerSplit: {
-    heading: "How the experience breaks down",
-    note:    "Hover or tab through the bar to see each role.",
+  impact: {
+    heading: "Impact of the PDPX-to-JLD automation tool",
+    note:    "We built a converter that turns PDPX files into JLD for development in the Quadient suite. Hover or tab a bar for detail.",
+    baseline: "Measured against the manual, pre-automation baseline.",
     items: [
-      { label: "Atos Syntel",                     months: 29, note: "Sep 2022 – Feb 2025 · Delivery & production support" },
-      { label: "Paragon Customer Communications", months: 5,  note: "Feb 2025 – Jul 2025 · Delivery analyst & PMO" },
-      { label: "Cognizant",                       months: 13, note: "Jul 2025 – present · Technical project manager" }
+      {
+        label: "More forms delivered to the client",
+        value: 30,
+        note:  "The converter removed the manual rebuild step, so far more forms cleared each delivery cycle."
+      },
+      {
+        label: "Development time saved per form",
+        value: 30,
+        note:  "Repetitive conversion and data-mapping work that used to be done by hand is now automated."
+      },
+      {
+        label: "Faster new-joiner ramp-up",
+        value: 20,
+        note:  "Structured onboarding and induction across 100–200 hires got new engineers productive sooner."
+      }
+      // To add a revenue figure, copy a block above and fill in your own number:
+      // { label: "Account revenue growth", value: 0, note: "..." }
     ]
   },
 

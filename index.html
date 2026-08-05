@@ -129,27 +129,29 @@
     <div class="shell">
       <ul class="metrics" data-metrics aria-label="Key achievements"></ul>
 
-      <!-- career split: horizontal stacked bar (part-to-whole) -->
-      <figure class="split" data-split hidden>
-        <div class="split__head">
-          <figcaption class="split__title" data-split-heading></figcaption>
-          <button class="split__toggle" type="button" data-split-table-toggle
-                  aria-expanded="false" aria-controls="splitTable">View as table</button>
+      <!-- project impact: horizontal bars (magnitude comparison, one hue) -->
+      <figure class="impact" data-impact hidden>
+        <div class="impact__head">
+          <figcaption class="impact__title" data-impact-heading></figcaption>
+          <button class="impact__toggle" type="button" data-impact-table-toggle
+                  aria-expanded="false" aria-controls="impactTable">View as table</button>
         </div>
 
-        <div class="split__bar" data-split-bar role="img" data-split-alt></div>
+        <p class="impact__note" data-impact-note></p>
 
-        <p class="split__readout" data-split-readout aria-live="polite"></p>
+        <div class="impact__rows" data-impact-rows role="img" aria-label=""></div>
 
-        <ul class="split__legend" data-split-legend></ul>
+        <div class="impact__axis" data-impact-axis aria-hidden="true"></div>
 
-        <div class="split__tablewrap" id="splitTable" hidden>
-          <table class="split__table">
-            <caption class="sr-only">Experience by employer</caption>
+        <p class="impact__readout" data-impact-readout aria-live="polite"></p>
+
+        <div class="impact__tablewrap" id="impactTable" hidden>
+          <table class="impact__table">
+            <caption class="sr-only">Improvement delivered by the automation tool</caption>
             <thead>
-              <tr><th scope="col">Employer</th><th scope="col">Months</th><th scope="col">Share</th></tr>
+              <tr><th scope="col">Measure</th><th scope="col">Improvement</th></tr>
             </thead>
-            <tbody data-split-tbody></tbody>
+            <tbody data-impact-tbody></tbody>
           </table>
         </div>
       </figure>
