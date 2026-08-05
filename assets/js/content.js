@@ -72,7 +72,7 @@ window.PORTFOLIO = {
   metrics: [
     { value: "4",       suffix: "yrs", label: "Technology delivery across 3 global firms" },
     { value: "0",       suffix: "",    label: "UAT defects at go-live on a major migration" },
-    { value: "100–200", suffix: "",    label: "Professionals hired & onboarded in one year" },
+    { value: "30–40",   suffix: "",    label: "Lateral hires guided from offer to day one" },
     { value: "15",      suffix: "",    label: "Engineers led and trained" }
   ],
 
@@ -123,7 +123,7 @@ window.PORTFOLIO = {
     paragraphs: [
       "I'm a technology delivery professional with nearly four years across three global firms — Cognizant, Paragon and Atos Syntel — building and running enterprise customer-communication platforms for major UK insurers and utilities, including Chubb.",
       "Because I came up through hands-on technical roles, I know how delivery actually works: requirements analysis, development, test cycles, controlled releases, go-live and production support. That's what makes me effective as a project manager — I can plan realistically, spot risk early, and hold a credible technical conversation with the team I'm leading.",
-      "Alongside delivery I've run hiring for my practice — screening, interviewing and placing 100–200 professionals in a single year — and led the engagement programmes that keep teams motivated.",
+      "Alongside delivery I've run hiring for my practice — screening, interviewing and placing engineers onto the right projects — and I was the named contact every external hire spoke to between accepting an offer and walking through the door, sorting background checks, joining dates and onboarding with HR. Around 30–40 lateral hires have come through that process with me. I've also led the engagement programmes that keep teams motivated.",
       "I'm now studying for my MBA at Aston University in Birmingham. My goal is to move further into technology consulting, particularly AI-enabled transformation."
     ],
     principles: [
@@ -168,22 +168,23 @@ window.PORTFOLIO = {
       client:  "Internal — Technology Competency",
       org:     "Cognizant",
       period:  "2025 — Present",
-      role:    "Resourcing & Talent Lead (alongside delivery)",
-      summary: "Owned hiring end-to-end for the practice — onboarding 100–200 professionals in a single year and keeping projects fully staffed.",
-      context: "Delivery commitments were growing faster than the team could staff them, and unfilled roles were putting billable project work at risk.",
+      role:    "Resourcing & Talent Lead · Onboarding POC (alongside delivery)",
+      summary: "Ran hiring end-to-end for the practice, then acted as the single point of contact that carried every new joiner from offer roll-out through to day one.",
+      context: "Delivery commitments were growing faster than the team could staff them, and unfilled roles were putting billable project work at risk. Accepted offers were also the fragile part — candidates go quiet between offer and joining, and a drop-out means starting the whole hire again.",
       actions: [
         "Ran hiring end-to-end: sourcing, screening and technical-panel interviews across technology competencies.",
         "Mapped every candidate to Service Orders (SOs) and project skill requirements so the right people landed on the right work.",
-        "Coordinated onboarding and induction — access, documentation and ramp-up.",
-        "Ran access and process-compliance audits to keep hiring records audit-ready.",
+        "Became the named point of contact for external hires after offer roll-out — candidates came to me directly with onboarding questions, background-verification (BGV) problems and date-of-joining changes, and I chased each one through with HR and the internal teams.",
+        "Checked in with every candidate every other day across the offer-to-joining window, so the experience stayed personal and accepted offers did not quietly lapse.",
+        "Coordinated induction, access and documentation, and ran process-compliance audits to keep hiring records audit-ready.",
         "Introduced gamified Mentimeter feedback sessions to surface team issues early, escalating them to senior management, and founded 'GammiFriday', a monthly department-wide engagement event."
       ],
       results: [
-        { value: "100–200", label: "Hired & onboarded in one year" },
-        { value: "~20%",    label: "Faster new-joiner ramp-up" },
-        { value: "100%",    label: "Audit-ready records" }
+        { value: "30–40", label: "Lateral hires guided from offer to day one" },
+        { value: "~20%",  label: "Faster new-joiner ramp-up" },
+        { value: "100%",  label: "Audit-ready hiring records" }
       ],
-      tags: ["Talent Acquisition", "Workforce Planning", "Onboarding", "Employee Engagement", "Compliance"]
+      tags: ["Talent Acquisition", "Candidate Experience", "Offer-to-Join Management", "BGV & Onboarding", "Workforce Planning", "Employee Engagement"]
     },
     {
       title:   "Running Delivery & Production Support at Scale",
@@ -223,7 +224,7 @@ window.PORTFOLIO = {
       period:  "Jul 2025 — Present",
       points: [
         "Led a 15-member team on a legacy platform migration, delivered with zero UAT defects.",
-        "Owned end-to-end hiring for the practice — 100–200 professionals onboarded in a year.",
+        "Owned end-to-end hiring for the practice and acted as the onboarding point of contact for 30–40 lateral hires.",
         "Awarded the Cognizant Cheers Award for delivery excellence and clean deployments."
       ]
     },
@@ -260,7 +261,7 @@ window.PORTFOLIO = {
   skills: [
     { group: "Project & Delivery",   items: ["Project & Programme Management", "Technical Delivery Management", "Full SDLC (requirements → build → UAT → release → support)", "Planning, Scheduling & Estimation", "Risk & Issue Management", "Agile & Waterfall"] },
     { group: "Release & Environments", items: ["Release Coordination (TEST/UAT/PROD)", "Deployment & Rollback", "Approval & Audit Compliance", "Production Support", "Incident Management"] },
-    { group: "People & Talent",      items: ["Talent Acquisition & Interviewing", "Workforce & Resource Planning", "Onboarding & Induction", "Team Leadership (15+)", "Training & Mentoring", "Employee Engagement"] },
+    { group: "People & Talent",      items: ["Talent Acquisition & Interviewing", "Workforce & Resource Planning", "Candidate Experience & Offer-to-Join Management", "BGV & Onboarding Liaison", "Team Leadership (15+)", "Training & Mentoring", "Employee Engagement"] },
     { group: "Business & Analysis",  items: ["Requirements Analysis", "Stakeholder Management", "Status Reporting", "Process Improvement", "Documentation"] },
     { group: "Technology",           items: ["Quadient Inspire (Designer, Interactive, Scaler, ICM)", "JavaScript", "HTML / CSS", "MySQL", "Windows / Linux"] },
     { group: "Tools & Data",         items: ["JIRA", "ServiceNow", "Microsoft Excel", "Microsoft Office Suite", "Power BI (Basic)", "Generative AI (Claude)"] },
