@@ -1,9 +1,19 @@
 # Saikireeti Yenugula — Portfolio
 
-A fast, accessible, one-page professional portfolio. No frameworks, no build step,
-no dependencies — just three files you can edit in a browser.
+A fast, accessible, one-page professional portfolio for a **technical project
+manager and MBA candidate**. No frameworks, no build step, no dependencies.
 
 **Live site:** https://linovibe.github.io/portfolio/
+
+---
+
+## Which document do I need?
+
+| You are… | Read this |
+|---|---|
+| **Me, wanting to change some text** | **[EDITING-GUIDE.md](EDITING-GUIDE.md)** — plain English, no coding |
+| An **AI assistant** asked to work on this | **[AI-GUIDE.md](AI-GUIDE.md)** — architecture, rules, invariants |
+| Setting it up / deploying | this file, below |
 
 ---
 
@@ -12,18 +22,31 @@ no dependencies — just three files you can edit in a browser.
 ```
 portfolio/
 ├── index.html                     the page structure (rarely needs changing)
-├── .nojekyll                      tells GitHub Pages to serve files as-is
+├── EDITING-GUIDE.md               ★ how to change anything, for non-coders
+├── AI-GUIDE.md                    ★ full brief for AI assistants
+├── CLAUDE.md                      pointer file AI coding tools read first
 ├── README.md                      this file
+├── .nojekyll                      tells GitHub Pages to serve files as-is
 └── assets/
     ├── Saikireeti_Yenugula_CV.pdf the CV that the "Download CV" button gives
     ├── css/styles.css             all the design (colours, spacing, motion)
-    ├── img/profile.jpg            your photo  ← replace this with a new one
+    ├── img/profile.jpg            the photo  ← replace this to change it
     └── js/
-        ├── content.js             ★ ALL YOUR TEXT LIVES HERE — edit this one
+        ├── content.js             ★ ALL TEXT AND NUMBERS LIVE HERE
         └── main.js                the engine (you never need to touch this)
 ```
 
 **The only file you normally edit is `assets/js/content.js`.**
+
+## What's on the page
+
+Hero (name, headline, target roles, photo, CV/LinkedIn/email) → four headline
+numbers → About + how-I-work → three STAR case studies that expand → career
+timeline → **Measured impact** (four animated % dials with a table view) →
+capabilities → education & certifications → community work → contact.
+
+Light and dark themes, keyboard accessible, WCAG AA contrast verified in both
+themes, no horizontal overflow from 375px up, and it prints cleanly.
 
 ---
 
