@@ -208,6 +208,112 @@
     });
   })();
 
+  /* ------------------------ career split chart ---------------------------
+     Horizontal stacked bar = the correct form for part-to-whole. Every value
+     is shown as a visible direct label in the legend AND in a table view, so
+     colour is never the only way to read the chart.                        */
+  (function renderSplit() {
+    var fig = q("[data-split]");
+    if (!fig) return;
+
+    var cfg = C.careerSplit || {};
+    var items = list(cfg.items).filter(function (i) {
+      return i && has(i.label) && Number(i.months) > 0;
+    });
+    if (items.length < 2) { fig.remove(); return; }
+
+    var total = items.reduce(function (s, i) { return s + Number(i.months); }, 0);
+    if (!(total > 0)) { fig.remove(); return; }
+
+    setText("[data-split-heading]", cfg.heading);
+
+    var bar      = q("[data-split-bar]");
+    var legend   = q("[data-split-legend]");
+    var readout  = q("[data-split-readout]");
+    var tbody    = q("[data-split-tbody]");
+    var toggle   = q("[data-split-table-toggle]");
+    var tableWrap= q("#splitTable");
+
+    var defaultNote = has(cfg.note) ? cfg.note : "";
+    if (readout) readout.textContent = defaultNote;
+
+    function pct(m) { return Math.round((Number(m) / total) * 100); }
+    function yrs(m) {
+      var y = Math.floor(m / 12), r = m % 12;
+      if (y && r) return y + "y " + r + "m";
+      if (y) return y + "y";
+      return r + "m";
+    }
+
+    // text alternative for the whole chart
+    var alt = "Experience by employer: " + items.map(function (i) {
+      return i.label + " " + pct(i.months) + " percent";
+    }).join(", ") + ".";
+    if (bar) bar.setAttribute("aria-label", alt);
+
+    items.forEach(function (item, idx) {
+      var slot = "var(--series-" + ((idx % 3) + 1) + ")";
+      var share = pct(item.months);
+      var detail = item.label + " · " + yrs(item.months) + " · " + share + "%" +
+                   (has(item.note) ? " — " + item.note : "");
+
+      // ---- bar segment (focusable, so keyboard shows the same as hover)
+      var seg = h("button", {
+        class: "split__seg",
+        attrs: {
+          type: "button",
+          style: "flex:" + item.months + " 1 0;--seg:" + slot,
+          "aria-label": detail
+        }
+      });
+      function activate() {
+        if (bar) bar.classList.add("is-hovering");
+        qa(".split__seg").forEach(function (s) { s.classList.remove("is-active"); });
+        seg.classList.add("is-active");
+        if (readout) readout.textContent = detail;
+      }
+      function deactivate() {
+        if (bar) bar.classList.remove("is-hovering");
+        seg.classList.remove("is-active");
+        if (readout) readout.textContent = defaultNote;
+      }
+      seg.addEventListener("mouseenter", activate);
+      seg.addEventListener("mouseleave", deactivate);
+      seg.addEventListener("focus", activate);
+      seg.addEventListener("blur", deactivate);
+      if (bar) bar.appendChild(seg);
+
+      // ---- legend entry doubles as the visible direct label
+      if (legend) {
+        legend.appendChild(h("li", {}, [
+          h("span", { class: "split__swatch", attrs: { style: "--seg:" + slot, "aria-hidden": "true" } }),
+          h("b", { text: item.label }),
+          h("span", { class: "split__value", text: yrs(item.months) + " · " + share + "%" })
+        ]));
+      }
+
+      // ---- table row (the WCAG-clean twin)
+      if (tbody) {
+        tbody.appendChild(h("tr", {}, [
+          h("td", { text: item.label }),
+          h("td", { text: String(item.months) }),
+          h("td", { text: share + "%" })
+        ]));
+      }
+    });
+
+    if (toggle && tableWrap) {
+      toggle.addEventListener("click", function () {
+        var open = tableWrap.hidden;
+        tableWrap.hidden = !open;
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.textContent = open ? "Hide table" : "View as table";
+      });
+    }
+
+    fig.hidden = false;
+  })();
+
   /* ------------------------------ about ---------------------------------- */
 
   setText("[data-about-kicker]", (C.about || {}).kicker);

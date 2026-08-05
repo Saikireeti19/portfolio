@@ -78,6 +78,23 @@ window.PORTFOLIO = {
 
 
   /* ==========================================================================
+     3b. CAREER SPLIT CHART  (the interactive bar under the metrics)
+     Shows how your total experience divides between employers.
+     "months" is just the number of months you spent there — the chart works
+     out the percentages itself. Empty the list  []  to hide the chart.
+     ========================================================================== */
+  careerSplit: {
+    heading: "How the experience breaks down",
+    note:    "Hover or tab through the bar to see each role.",
+    items: [
+      { label: "Atos Syntel",                     months: 29, note: "Sep 2022 – Feb 2025 · Delivery & production support" },
+      { label: "Paragon Customer Communications", months: 5,  note: "Feb 2025 – Jul 2025 · Delivery analyst & PMO" },
+      { label: "Cognizant",                       months: 13, note: "Jul 2025 – present · Technical project manager" }
+    ]
+  },
+
+
+  /* ==========================================================================
      4. ABOUT
      ========================================================================== */
   about: {

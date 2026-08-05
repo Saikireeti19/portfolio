@@ -128,6 +128,31 @@
     <!-- proof strip -->
     <div class="shell">
       <ul class="metrics" data-metrics aria-label="Key achievements"></ul>
+
+      <!-- career split: horizontal stacked bar (part-to-whole) -->
+      <figure class="split" data-split hidden>
+        <div class="split__head">
+          <figcaption class="split__title" data-split-heading></figcaption>
+          <button class="split__toggle" type="button" data-split-table-toggle
+                  aria-expanded="false" aria-controls="splitTable">View as table</button>
+        </div>
+
+        <div class="split__bar" data-split-bar role="img" data-split-alt></div>
+
+        <p class="split__readout" data-split-readout aria-live="polite"></p>
+
+        <ul class="split__legend" data-split-legend></ul>
+
+        <div class="split__tablewrap" id="splitTable" hidden>
+          <table class="split__table">
+            <caption class="sr-only">Experience by employer</caption>
+            <thead>
+              <tr><th scope="col">Employer</th><th scope="col">Months</th><th scope="col">Share</th></tr>
+            </thead>
+            <tbody data-split-tbody></tbody>
+          </table>
+        </div>
+      </figure>
     </div>
   </section>
 

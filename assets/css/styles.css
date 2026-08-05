@@ -35,6 +35,11 @@
   --font-display:"Instrument Serif","Iowan Old Style",Georgia,serif;
 
   --ease:cubic-bezier(.22,.61,.36,1);
+
+  /* chart series — validated categorical slots 1-3 (light steps) */
+  --series-1:#2a78d6;
+  --series-2:#eb6834;
+  --series-3:#1baf7a;
 }
 
 html[data-theme="dark"]{
@@ -56,6 +61,11 @@ html[data-theme="dark"]{
   --shadow-sm:0 1px 2px rgba(0,0,0,.35);
   --shadow-md:0 6px 20px rgba(0,0,0,.35);
   --shadow-lg:0 22px 60px rgba(0,0,0,.45);
+
+  /* chart series — same three hues, re-stepped for the dark surface */
+  --series-1:#3987e5;
+  --series-2:#d95926;
+  --series-3:#199e70;
 }
 
 /* ----------------------------- reset ------------------------------------ */
@@ -299,6 +309,59 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
 }
 .metric__suffix{font-size:.5em;font-weight:600;color:var(--accent-text)}
 .metric__label{margin-top:9px;font-size:.855rem;color:var(--muted);line-height:1.45}
+
+/* ----------------------------- career split chart -----------------------
+   Horizontal stacked bar (part-to-whole). Series colours are the validated
+   categorical slots 1-3, stepped separately for each theme — do not swap
+   these for the brand accent: #1e40af falls outside the light lightness band.
+   ------------------------------------------------------------------------ */
+.split{margin:clamp(28px,4vw,42px) 0 0;padding:0}
+.split__head{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between;margin-bottom:14px}
+.split__title{font-size:.755rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.split__toggle{
+  font-size:.82rem;font-weight:600;color:var(--accent-text);
+  padding:4px 2px;border-bottom:1px solid transparent;
+  transition:border-color .25s var(--ease);
+}
+.split__toggle:hover{border-bottom-color:currentColor}
+
+/* the bar: min-height gives every segment a >=24px hit target */
+.split__bar{display:flex;gap:2px;min-height:26px}
+.split__seg{
+  position:relative;border:0;padding:0;min-width:3px;
+  background:var(--seg,var(--series-1));
+  transition:opacity .25s var(--ease), transform .25s var(--ease);
+  cursor:default;
+}
+.split__seg:first-child{border-radius:4px 0 0 4px}
+.split__seg:last-child{border-radius:0 4px 4px 0}
+.split__seg:only-child{border-radius:4px}
+.split__bar.is-hovering .split__seg{opacity:.42}
+.split__bar.is-hovering .split__seg.is-active{opacity:1}
+.split__seg:focus-visible{outline:2.5px solid var(--ink);outline-offset:3px;z-index:1}
+
+.split__readout{margin-top:12px;font-size:.9rem;color:var(--muted);min-height:1.5em}
+
+.split__legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:12px}
+.split__legend li{display:flex;align-items:center;gap:8px;font-size:.865rem;color:var(--ink-soft)}
+.split__swatch{width:10px;height:10px;border-radius:3px;flex:none;background:var(--seg,var(--series-1))}
+.split__legend b{font-weight:600}
+.split__value{color:var(--muted)}
+
+.split__tablewrap{margin-top:18px;overflow-x:auto}
+.split__table{width:100%;border-collapse:collapse;font-size:.875rem}
+.split__table th,.split__table td{
+  text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);
+  font-variant-numeric:tabular-nums;
+}
+.split__table th{color:var(--muted);font-weight:600;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.split__table td{color:var(--ink-soft)}
+.split__table td:first-child{font-weight:500;color:var(--ink)}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
 
 /* ----------------------------- about ------------------------------------ */
 .about{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(30px,5vw,64px)}
