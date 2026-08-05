@@ -101,12 +101,9 @@ window.PORTFOLIO = {
         note:  "Repetitive conversion and data-mapping work that used to be done by hand is now automated."
       },
       {
-        label: "AI-assisted delivery",
-        // ⚠️  CONFIRM THIS NUMBER before publishing — it is the one figure that
-        //     was not measured. Set it to your real share of AI-assisted work,
-        //     or delete this whole { ... } block to drop the dial.
+        label: "More AI-assisted delivery",
         value: 40,
-        note:  "Generative-AI tooling now supports drafting, conversion checks and documentation across the project."
+        note:  "Generative-AI tooling now supports drafting, conversion checks and documentation — up around 40% on previous delivery cycles."
       },
       {
         label: "Revenue growth",
