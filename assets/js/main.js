@@ -409,7 +409,7 @@
             class: e.highlight ? "is-highlight" : "",
             attrs: { "data-reveal": true, "data-reveal-delay": String(Math.min(i + 1, 6)) }
           }, [
-            e.highlight     ? h("span", { class: "edu__badge", text: "Incoming" }) : null,
+            e.highlight     ? h("span", { class: "edu__badge", text: has(e.badge) ? e.badge : "Current" }) : null,
             has(e.period)   ? h("p", { class: "edu__period", text: e.period }) : null,
             h("h3", { class: "edu__degree", text: e.degree || "" }),
             has(e.school)   ? h("p", { class: "edu__school", text: e.school }) : null,
@@ -485,6 +485,12 @@
     if (badge) {
       if (has(ct.availability)) { badge.textContent = ct.availability; badge.hidden = false; }
       else badge.remove();
+    }
+
+    var note = q("[data-availability-note]");
+    if (note) {
+      if (has(ct.availabilityNote)) { note.textContent = ct.availabilityNote; note.hidden = false; }
+      else note.remove();
     }
 
     var meta = q("[data-contact-meta]");

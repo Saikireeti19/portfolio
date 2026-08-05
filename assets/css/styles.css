@@ -253,10 +253,10 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
   line-height:1.02;letter-spacing:-.045em;font-weight:800;
 }
 .hero__headline{
-  margin-top:16px;
-  font-family:var(--font-display);font-style:italic;
-  font-size:clamp(1.25rem,2.7vw,1.85rem);
-  line-height:1.28;color:var(--accent-text);letter-spacing:-.01em;
+  margin-top:14px;
+  font-size:clamp(1.05rem,1.9vw,1.3rem);
+  font-weight:600;line-height:1.4;
+  color:var(--ink-soft);letter-spacing:-.005em;
 }
 .hero__intro{margin-top:18px;max-width:60ch;color:var(--ink-soft);font-size:1.05rem}
 .hero__cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
@@ -507,6 +507,10 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
 .badge::before{
   content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;
   box-shadow:0 0 0 3px color-mix(in srgb,#22c55e 22%,transparent);
+}
+.contact__note{
+  margin:14px auto 0;max-width:56ch;
+  font-size:.945rem;color:var(--muted);
 }
 .contact__actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
 .contact__meta{

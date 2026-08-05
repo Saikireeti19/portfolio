@@ -22,15 +22,17 @@ window.PORTFOLIO = {
   basics: {
     fullName:  "Saikireeti Yenugula",
     shortName: "Sai Kireeti",              // used in the navbar logo
-    // The one-line headline under your name. Keep it role-focused.
-    headline:  "Project & Change Management · Business Transformation",
-    // The short paragraph in the hero. 2 sentences max works best.
-    intro:     "I deliver technology change for major UK insurers and utilities — running controlled releases at scale, leading delivery teams, and building the teams that ship the work. Now heading to Aston University for my MBA to move further into management and consulting.",
+
+    // The professional headline under your name (like a LinkedIn headline).
+    headline:  "Technical Project Manager — Technology Delivery & Transformation",
+
+    // The short paragraph in the hero. 2–3 sentences works best.
+    intro:     "I manage enterprise technology delivery end to end — requirements, build, test cycles, release and production support — for major UK insurers and utilities. Because I came up through hands-on technical roles, I plan realistically and speak the same language as the engineers I lead. Now completing my MBA at Aston University and moving toward technology and AI transformation consulting.",
 
     email:     "saikireeti29@gmail.com",
     // Leave phone empty ("") to hide it. Recommended to keep it off a public site.
     phone:     "",
-    location:  "Relocating to Birmingham, UK · Sep 2026",
+    location:  "Studying in Birmingham, UK",
     linkedin:  "https://www.linkedin.com/in/saikireeti-yenugula-362950221",
     github:    "",                          // e.g. "https://github.com/LinoVibe" or "" to hide
 
@@ -38,40 +40,40 @@ window.PORTFOLIO = {
     cvUrl:     "assets/Saikireeti_Yenugula_CV.pdf",
     cvLabel:   "Download CV",
 
-    // YOUR PHOTO:  save a square photo as  assets/img/profile.jpg
-    // then this line already works. Leave "" to show your initials instead.
+    // YOUR PHOTO: save a square/portrait photo as  assets/img/profile.jpg
+    // Leave "" to show your initials instead.
     photo:     "assets/img/profile.jpg",
 
     // Browser tab title + Google/LinkedIn preview text
-    pageTitle: "Saikireeti Yenugula — Project & Change Management",
-    metaDesc:  "Project and change management professional with 4 years delivering technology change for major UK insurers and utilities. MBA candidate at Aston University.",
+    pageTitle: "Saikireeti Yenugula — Technical Project Manager",
+    metaDesc:  "Technical project manager with 4 years delivering enterprise technology for major UK insurers and utilities. MBA candidate at Aston University, moving into technology and AI transformation consulting.",
 
-    // Set this AFTER your site is live, e.g. "https://linovibe.github.io/portfolio/"
+    // Set this AFTER your site is live
     siteUrl:   "https://linovibe.github.io/portfolio/"
   },
 
 
   /* ==========================================================================
      2. THE ROLES YOU ARE TARGETING  (small pills in the hero)
+     These are roles you WANT — not roles you have already held.
      ========================================================================== */
   targetRoles: [
-    "Project Manager",
-    "Change Manager",
-    "Business Analyst",
-    "Technology / Transformation Consultant",
-    "HR Operations"
+    "Technical Project Manager",
+    "Project / Delivery Manager",
+    "Technology Consultant",
+    "AI Transformation Consultant",
+    "Cyber Security Consultant"
   ],
 
 
   /* ==========================================================================
      3. HEADLINE NUMBERS  (the proof strip — this is what hiring managers scan)
-     "value" can contain numbers and symbols. "suffix" is added after it.
      ========================================================================== */
   metrics: [
-    { value: "4",       suffix: "yrs",  label: "Delivery experience across 3 global firms" },
-    { value: "20–25",   suffix: "/day", label: "Production changes managed, zero failed" },
-    { value: "100–200", suffix: "",     label: "Professionals hired & onboarded in one year" },
-    { value: "15",      suffix: "",      label: "Team members led and trained" }
+    { value: "4",       suffix: "yrs", label: "Technology delivery across 3 global firms" },
+    { value: "0",       suffix: "",    label: "UAT defects at go-live on a major migration" },
+    { value: "100–200", suffix: "",    label: "Professionals hired & onboarded in one year" },
+    { value: "15",      suffix: "",    label: "Engineers led and trained" }
   ],
 
 
@@ -82,14 +84,14 @@ window.PORTFOLIO = {
     heading: "About",
     kicker:  "Who I am",
     paragraphs: [
-      "I'm a technology delivery professional with nearly four years across three global firms — Cognizant, Paragon and Atos Syntel — building and running customer-communication platforms for major UK insurers and utilities including Chubb, Bupa, Liberty, Scottish Power and SSE.",
-      "My work sits where technology meets coordination: owning change approvals and controlled releases, keeping senior stakeholders aligned, and turning unclear requirements into plans that ship on time. Alongside delivery I've run hiring for my practice — screening, interviewing and placing 100–200 professionals in a single year — and led the engagement programmes that keep teams motivated.",
-      "In September 2026 I start my MBA at Aston University in Birmingham. It's a deliberate step: I want to lead programmes and advise on transformation, not just deliver it."
+      "I'm a technology delivery professional with nearly four years across three global firms — Cognizant, Paragon and Atos Syntel — building and running enterprise customer-communication platforms for major UK insurers and utilities, including Chubb.",
+      "Because I came up through hands-on technical roles, I know how delivery actually works: requirements analysis, development, test cycles, controlled releases, go-live and production support. That's what makes me effective as a project manager — I can plan realistically, spot risk early, and hold a credible technical conversation with the team I'm leading.",
+      "Alongside delivery I've run hiring for my practice — screening, interviewing and placing 100–200 professionals in a single year — and led the engagement programmes that keep teams motivated.",
+      "I'm now studying for my MBA at Aston University in Birmingham. My goal is to move further into technology consulting, particularly AI-enabled transformation."
     ],
-    // The "how I work" principles — keeps this section from being just a bio.
     principles: [
-      { title: "Controlled, not chaotic", text: "Every change goes through approval gates. A zero-failed-change record isn't luck — it's process." },
-      { title: "Evidence over opinion",   text: "I track what matters: defects, turnaround, SLA adherence, capacity. Decisions follow the data." },
+      { title: "Delivery, end to end",              text: "I've owned every stage — requirements, build, UAT, release and production support — so the plans I make reflect how the work really happens." },
+      { title: "Evidence over opinion",             text: "I track what matters: defects, turnaround, SLA adherence, capacity. Decisions follow the data." },
       { title: "Build the team, not just the thing", text: "I trained 15 engineers from zero on a new platform, cutting our reliance on external hiring." }
     ]
   },
@@ -103,18 +105,17 @@ window.PORTFOLIO = {
   caseStudiesKicker:  "Evidence",
   caseStudies: [
     {
-      title:   "Legacy Forms Modernisation for a Global Insurer",
+      title:   "Legacy Platform Migration for a Global Insurer",
       client:  "Chubb (UK & Australia)",
       org:     "Cognizant",
       period:  "2025 — Present",
-      role:    "Technical Project Manager / Programmer Analyst",
-      // The short line shown on the closed card
-      summary: "Migrated an insurer's legacy communication forms onto a modern platform — delivered with zero UAT defects at go-live.",
-      context: "Chubb's customer communications ran on legacy Xpression forms that were slow to change and inconsistent in branding. The programme needed migrating to Quadient without disrupting live customer communications.",
+      role:    "Technical Project Manager",
+      summary: "Migrated an insurer's legacy communication platform onto a modern stack — delivered with zero UAT defects at go-live.",
+      context: "Chubb's customer communications ran on a legacy Xpression platform that was slow to change and inconsistent in branding. It needed migrating to Quadient without disrupting live customer communications.",
       actions: [
-        "Led the migration of legacy forms to Quadient, rebuilding them as reusable blocks and templates.",
-        "Created Business Templates and Style Masters so every communication stayed on-brand and consistent.",
-        "Managed changeset promotion across TEST, UAT and PROD with full approval-gate compliance.",
+        "Planned and led the migration of legacy forms to Quadient, rebuilding them as reusable blocks and templates.",
+        "Created Base Templates (BT) and Style Masters so every communication stayed on-brand and consistent.",
+        "Owned the release path across TEST, UAT and PROD, with full approval and audit compliance.",
         "Led a 15-member team across Agile and Waterfall delivery, tracking work on JIRA and ServiceNow and reporting status daily to senior stakeholders.",
         "Trained all 15 team members on the platform from the ground up."
       ],
@@ -123,7 +124,7 @@ window.PORTFOLIO = {
         { value: "~30%", label: "Higher development efficiency" },
         { value: "~40%", label: "Less reliance on external hiring" }
       ],
-      tags: ["Migration Delivery", "Change Management", "Team Leadership", "Quadient Inspire", "Agile & Waterfall"]
+      tags: ["Technical Delivery", "Migration Programme", "Team Leadership", "Full SDLC", "Agile & Waterfall"]
     },
     {
       title:   "Scaling the Team Behind the Delivery",
@@ -148,26 +149,26 @@ window.PORTFOLIO = {
       tags: ["Talent Acquisition", "Workforce Planning", "Onboarding", "Employee Engagement", "Compliance"]
     },
     {
-      title:   "Controlled Change at Scale for UK Utilities & Insurers",
-      client:  "Liberty · Scottish Power · Bupa · SSE · Paragon",
+      title:   "Running Delivery & Production Support at Scale",
+      client:  "Multiple UK insurance & utility brands",
       org:     "Paragon Customer Communications (UK) · Atos Syntel",
       period:  "2022 — 2025",
-      role:    "Change Manager · PMO · CCM Developer",
-      summary: "Ran 20–25 production changes a day across four UK clients with a zero-failed-change record, while owning PMO governance.",
-      context: "High-volume customer communications for four UK brands meant constant production change — and any failed deployment would hit live customer letters, bills and statements.",
+      role:    "Delivery Analyst · Production Support · PMO",
+      summary: "Kept high-volume customer communications running for multiple UK brands, coordinating 20–25 releases a day with zero failed deployments.",
+      context: "High-volume customer communications for multiple UK brands meant constant production change. Any failed release would land directly on live customer letters, bills and statements.",
       actions: [
-        "Acted as change manager, moving 20–25 changesets per day across TEST-UAT and TEST-PROD, approving changes and assigning tasks to the team.",
-        "Owned PMO governance for the India delivery centre — RAID logs, governance trackers, planning and status reporting across 60+ activities.",
         "Analysed business requirements and built customer communication templates, maintaining style masters for brand consistency.",
-        "Ran production support: debugged incidents via Scaler job IDs, monitored services and resubmitted failed jobs after queue or network failures.",
-        "Standardised recurring procedures and documentation, and mentored junior team members."
+        "Coordinated 20–25 controlled releases a day across test and production environments, reviewing work and assigning tasks to the team.",
+        "Ran production support — debugged incidents from job IDs, monitored services and resubmitted failed jobs after queue or network failures.",
+        "Patched and upgraded platform components on servers to keep the environment stable, secure and current.",
+        "Automated repetitive configuration and data-mapping work, and owned PMO status reporting for the delivery centre."
       ],
       results: [
         { value: "0",    label: "Failed deployments" },
-        { value: "~15%", label: "Fewer repeat issues after standardisation" },
-        { value: "4",    label: "UK enterprise clients supported" }
+        { value: "~30%", label: "Less manual effort after automation" },
+        { value: "~15%", label: "Fewer repeat issues after standardisation" }
       ],
-      tags: ["Change & Release", "PMO Governance", "RAID / Risk", "Production Support", "Stakeholder Management"]
+      tags: ["Delivery Management", "Release Coordination", "Production Support", "PMO & Reporting", "Stakeholder Management"]
     }
   ],
 
@@ -179,34 +180,34 @@ window.PORTFOLIO = {
   experienceKicker:  "Career",
   experience: [
     {
-      role:    "Programmer Analyst — Delivery & Resourcing",
+      role:    "Technical Project Manager — Delivery & Resourcing",
       company: "Cognizant",
       meta:    "Client: Chubb (UK & Australia) · India",
       period:  "Jul 2025 — Present",
       points: [
-        "Led a 15-member team on the Xpression-to-Quadient migration, delivered with zero UAT defects.",
+        "Led a 15-member team on a legacy platform migration, delivered with zero UAT defects.",
         "Owned end-to-end hiring for the practice — 100–200 professionals onboarded in a year.",
         "Awarded the Cognizant Cheers Award for delivery excellence and clean deployments."
       ]
     },
     {
-      role:    "Quadient Analyst & PMO",
+      role:    "Delivery Analyst & PMO",
       company: "Paragon Customer Communications (UK)",
-      meta:    "Clients: Liberty, Scottish Power, Bupa, SSE · India",
+      meta:    "Multiple UK insurance & utility brands · India",
       period:  "Feb 2025 — Jul 2025",
       points: [
-        "Managed 20–25 daily production changes with a zero-failed-change record.",
-        "Owned PMO governance — RAID logs, planning and reporting across 60+ activities.",
-        "Built customer communication templates and multi-format outputs (PDF / JSON)."
+        "Coordinated 20–25 daily production releases with a zero-failed-deployment record.",
+        "Owned PMO planning, governance and status reporting across 60+ activities.",
+        "Built customer communication templates and multi-format document outputs."
       ]
     },
     {
-      role:    "Associate Consultant — Change Manager",
+      role:    "Associate Consultant — Delivery & Production Support",
       company: "Atos Syntel",
       meta:    "Client: Paragon Customer Communications (UK) · India",
       period:  "Sep 2022 — Feb 2025",
       points: [
-        "Change manager for the delivery team, coordinating controlled releases with full audit compliance.",
+        "Ran production support and controlled releases across environments with full audit compliance.",
         "Supported the Delivery Director on planning, progress tracking and status reporting.",
         "Delivered consistently — earned a direct in-house move to the client, Paragon."
       ]
@@ -220,27 +221,31 @@ window.PORTFOLIO = {
   skillsHeading: "Capabilities",
   skillsKicker:  "What I bring",
   skills: [
-    { group: "Project & Delivery",  items: ["Project & Programme Management", "Migration Delivery", "Planning & Scheduling", "RAID / Risk Governance", "PMO Operations", "Agile & Waterfall"] },
-    { group: "Change & Release",    items: ["Change Management", "Release Governance (TEST/UAT/PROD)", "Approval & Audit Compliance", "Production Support", "Incident Resolution"] },
-    { group: "People & Talent",     items: ["Talent Acquisition & Interviewing", "Workforce & Resource Planning", "Onboarding & Induction", "Team Leadership (15+)", "Training & Mentoring", "Employee Engagement"] },
-    { group: "Business & Analysis", items: ["Requirements Analysis", "Stakeholder Management", "Status Reporting", "Process Improvement", "Documentation"] },
-    { group: "Technology",          items: ["Quadient Inspire (Designer, Interactive, Scaler, ICM)", "JavaScript", "HTML / CSS", "JSON", "MySQL", "RabbitMQ", "Sefas"] },
-    { group: "Tools & Data",        items: ["JIRA", "ServiceNow", "Microsoft Excel", "Microsoft Office Suite", "Power BI (Basic)", "Generative AI (Claude)"] }
+    { group: "Project & Delivery",   items: ["Project & Programme Management", "Technical Delivery Management", "Full SDLC (requirements → build → UAT → release → support)", "Planning, Scheduling & Estimation", "Risk & Issue Management", "Agile & Waterfall"] },
+    { group: "Release & Environments", items: ["Release Coordination (TEST/UAT/PROD)", "Deployment & Rollback", "Approval & Audit Compliance", "Production Support", "Incident Management"] },
+    { group: "People & Talent",      items: ["Talent Acquisition & Interviewing", "Workforce & Resource Planning", "Onboarding & Induction", "Team Leadership (15+)", "Training & Mentoring", "Employee Engagement"] },
+    { group: "Business & Analysis",  items: ["Requirements Analysis", "Stakeholder Management", "Status Reporting", "Process Improvement", "Documentation"] },
+    { group: "Technology",           items: ["Quadient Inspire (Designer, Interactive, Scaler, ICM)", "JavaScript", "HTML / CSS", "MySQL", "Windows / Linux"] },
+    { group: "Tools & Data",         items: ["JIRA", "ServiceNow", "Microsoft Excel", "Microsoft Office Suite", "Power BI (Basic)", "Generative AI (Claude)"] },
+    // Honest "direction of travel" — things you are actively learning, not claiming.
+    { group: "Currently Building",   items: ["AI Transformation & Enablement", "Cyber Security Fundamentals", "MBA — Strategy & Leadership"] }
   ],
 
 
   /* ==========================================================================
      8. EDUCATION  (set highlight: true on the one to stand out)
+     "badge" is the little label on the highlighted one.
      ========================================================================== */
   educationHeading: "Education & Certifications",
   educationKicker:  "Credentials",
   education: [
     {
       highlight: true,
+      badge:  "Current",
       period: "Sep 2026 — Sep 2027",
       degree: "MBA — Master of Business Administration",
       school: "Aston University · Birmingham, UK",
-      detail: "Incoming. Focused on strategy, leadership and transformation."
+      detail: "Studying strategy, leadership and transformation."
     },
     {
       highlight: false,
@@ -295,9 +300,11 @@ window.PORTFOLIO = {
   contact: {
     heading: "Let's talk",
     kicker:  "Contact",
-    text:    "I'm open to project management, change management, business analysis, consulting and HR operations roles in the UK — including internships and part-time work alongside my MBA.",
-    // Availability note shown as a small badge. Leave "" to hide.
-    availability: "Available from September 2026 · Birmingham, UK"
+    text:    "I'm open to technical project management, delivery and technology consulting roles — including internships and part-time work alongside my MBA.",
+    // Short badge line. Leave "" to hide.
+    availability: "Currently studying in Birmingham, UK",
+    // Longer availability detail. Leave "" to hide.
+    availabilityNote: "Open to relocating anywhere in the UK for full-time roles after completing my course. Available remotely, or on-site around Birmingham, for internship and part-time roles."
   },
 
 
@@ -306,7 +313,9 @@ window.PORTFOLIO = {
      ========================================================================== */
   settings: {
     // Accent colour used for links, buttons and highlights.
-    accent: "#2f6df6",
+    // Deep navy blue — the professional-services standard, and high contrast.
+    // Other good options: "#1d4ed8" (brighter navy) · "#0f766e" (teal) · "#334155" (graphite)
+    accent: "#1e40af",
     // Which theme loads first for new visitors: "light", "dark", or "system".
     defaultTheme: "system",
     // Show the little scroll-progress bar at the very top of the page?
