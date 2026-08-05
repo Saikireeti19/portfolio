@@ -125,9 +125,11 @@
   setText("[data-hero-name]", basics.fullName);
   setText("[data-hero-headline]", basics.headline);
   setText("[data-hero-intro]", basics.intro);
-  setText("[data-hero-location]", basics.location);
+  // The hero pill shows "status" if set (e.g. MBA candidate), else the location.
+  var heroPill = has(basics.status) ? basics.status : basics.location;
+  setText("[data-hero-location]", heroPill);
 
-  if (!has(basics.location)) {
+  if (!has(heroPill)) {
     var eyebrow = q(".hero__eyebrow");
     if (eyebrow) eyebrow.hidden = true;
   }

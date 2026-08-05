@@ -32,7 +32,11 @@ window.PORTFOLIO = {
     email:     "saikireeti29@gmail.com",
     // Leave phone empty ("") to hide it. Recommended to keep it off a public site.
     phone:     "",
-    location:  "Studying in Birmingham, UK",
+
+    // The small pill at the very top of the page — the first thing anyone reads.
+    status:    "MBA Candidate · Aston Business School",
+    // Used in the contact block at the bottom.
+    location:  "Birmingham, UK",
     linkedin:  "https://www.linkedin.com/in/saikireeti-yenugula-362950221",
     github:    "",                          // e.g. "https://github.com/LinoVibe" or "" to hide
 
@@ -282,8 +286,8 @@ window.PORTFOLIO = {
       badge:  "Current",
       period: "Sep 2026 — Sep 2027",
       degree: "MBA — Master of Business Administration",
-      school: "Aston University · Birmingham, UK",
-      detail: "Studying strategy, leadership and transformation."
+      school: "Aston Business School, Aston University · Birmingham, UK",
+      detail: "Triple-accredited business school (AACSB, AMBA and EQUIS) — a standard held by fewer than 1% of business schools worldwide. Studying strategy, leadership and transformation."
     },
     {
       highlight: false,
