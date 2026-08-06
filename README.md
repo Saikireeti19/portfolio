@@ -1,9 +1,9 @@
-﻿# Saikireeti Yenugula — Portfolio
+# Saikireeti Yenugula — Portfolio
 
 A fast, accessible, one-page professional portfolio for a **technical project
 manager and MBA candidate**. No frameworks, no build step, no dependencies.
 
-**Live site:** https://saikireeti.github.io/portfolio/
+**Live site:** https://saikireeti19.github.io/portfolio/
 
 ---
 
@@ -21,29 +21,29 @@ manager and MBA candidate**. No frameworks, no build step, no dependencies.
 
 ```
 portfolio/
-â”œâ”€â”€ index.html                     the page structure (rarely needs changing)
-â”œâ”€â”€ EDITING-GUIDE.md               â˜… how to change anything, for non-coders
-â”œâ”€â”€ AI-GUIDE.md                    â˜… full brief for AI assistants
-â”œâ”€â”€ CLAUDE.md                      pointer file AI coding tools read first
-â”œâ”€â”€ README.md                      this file
-â”œâ”€â”€ .nojekyll                      tells GitHub Pages to serve files as-is
-â””â”€â”€ assets/
-    â”œâ”€â”€ Saikireeti_Yenugula_CV.pdf the CV that the "Download CV" button gives
-    â”œâ”€â”€ css/styles.css             all the design (colours, spacing, motion)
-    â”œâ”€â”€ img/profile.jpg            the photo  â† replace this to change it
-    â””â”€â”€ js/
-        â”œâ”€â”€ content.js             â˜… ALL TEXT AND NUMBERS LIVE HERE
-        â””â”€â”€ main.js                the engine (you never need to touch this)
+├── index.html                     the page structure (rarely needs changing)
+├── EDITING-GUIDE.md               ★ how to change anything, for non-coders
+├── AI-GUIDE.md                    ★ full brief for AI assistants
+├── CLAUDE.md                      pointer file AI coding tools read first
+├── README.md                      this file
+├── .nojekyll                      tells GitHub Pages to serve files as-is
+└── assets/
+    ├── Saikireeti_Yenugula_CV.pdf the CV that the "Download CV" button gives
+    ├── css/styles.css             all the design (colours, spacing, motion)
+    ├── img/profile.jpg            the photo  ← replace this to change it
+    └── js/
+        ├── content.js             ★ ALL TEXT AND NUMBERS LIVE HERE
+        └── main.js                the engine (you never need to touch this)
 ```
 
 **The only file you normally edit is `assets/js/content.js`.**
 
 ## What's on the page
 
-Hero (name, headline, target roles, photo, CV/LinkedIn/email) â†’ four headline
-numbers â†’ About + how-I-work â†’ three STAR case studies that expand â†’ career
-timeline â†’ **Measured impact** (four animated % dials with a table view) â†’
-capabilities â†’ education & certifications â†’ community work â†’ contact.
+Hero (name, headline, target roles, photo, CV/LinkedIn/email) → four headline
+numbers → About + how-I-work → three STAR case studies that expand → career
+timeline → **Measured impact** (four animated % dials with a table view) →
+capabilities → education & certifications → community work → contact.
 
 Light and dark themes, keyboard accessible, WCAG AA contrast verified in both
 themes, no horizontal overflow from 375px up, and it prints cleanly.
@@ -54,7 +54,7 @@ themes, no horizontal overflow from 375px up, and it prints cleanly.
 
 ### Step 1. Create the repository
 
-1. Go to **https://github.com/new** (sign in as `saikireeti`).
+1. Go to **https://github.com/new** (sign in as `Saikireeti19`).
 2. **Repository name:** `portfolio`
 3. **Description:** `My professional portfolio website`
 4. Choose **Public** — this is required for free GitHub Pages.
@@ -70,12 +70,12 @@ The easiest way, no commands needed:
 3. Select **everything inside it** — `index.html`, `README.md`, `.nojekyll` and the
    whole `assets` folder — and drag it all into the browser window.
    - If dragging the folder doesn't work, drag `index.html` first, then use
-     **Add file â†’ Upload files** again for the `assets` folder.
+     **Add file → Upload files** again for the `assets` folder.
 4. In the "Commit changes" box type: `Add portfolio site`
 5. Click **Commit changes**.
 
 > If you can't see `.nojekyll` in your folder, it's because Windows hides files
-> that start with a dot. In File Explorer go to **View â†’ Show â†’ Hidden items**.
+> that start with a dot. In File Explorer go to **View → Show → Hidden items**.
 
 ### Step 3. Turn on GitHub Pages
 
@@ -84,11 +84,11 @@ The easiest way, no commands needed:
 3. Under **Source** choose **Deploy from a branch**.
 4. Under **Branch** choose **main**, keep the folder as **/ (root)**, click **Save**.
 5. Wait about 1–2 minutes, then refresh the page. GitHub will show:
-   *"Your site is live at https://saikireeti.github.io/portfolio/"*
+   *"Your site is live at https://saikireeti19.github.io/portfolio/"*
 
 ### Step 4. Check it worked
 
-Open **https://saikireeti.github.io/portfolio/** on your laptop and on your phone.
+Open **https://saikireeti19.github.io/portfolio/** on your laptop and on your phone.
 
 You should see your name, your photo, the blue metric strip, and the three
 "Selected Work" cards that open when clicked.
@@ -99,7 +99,7 @@ You should see your name, your photo, the blue metric strip, and the three
 
 You never need a computer or any software. Do it straight on GitHub:
 
-1. Go to your repository â†’ `assets` â†’ `js` â†’ **`content.js`**
+1. Go to your repository → `assets` → `js` → **`content.js`**
 2. Click the **pencil icon** (Edit this file) at the top right.
 3. Change the text inside the `"quotes"`.
 4. Scroll down, type a short note like `Update headline`, click **Commit changes**.
@@ -124,7 +124,7 @@ repository's **History** and copy it back.
 | Change my photo | Upload a new square/portrait photo to `assets/img/` named exactly `profile.jpg` |
 | Change my CV | Upload your new PDF to `assets/` then update `cvUrl` in `content.js` |
 | Add my phone number | Set `phone: "+44 7xxx xxxxxx"` in `content.js` (leave `""` to hide it) |
-| Add a GitHub link | Set `github: "https://github.com/saikireeti"` in `content.js` |
+| Add a GitHub link | Set `github: "https://github.com/Saikireeti19"` in `content.js` |
 | Change the accent colour | Change `accent` in `settings` at the bottom of `content.js` |
 | Add a new case study | Copy one whole `{ ... }` block inside `caseStudies` and edit the copy |
 | Hide a whole section | Empty its list, e.g. `beyond: []` |

@@ -1,4 +1,4 @@
-﻿/* ============================================================================
+/* ============================================================================
    ⚡  EDIT YOUR PORTFOLIO HERE  ⚡
    ----------------------------------------------------------------------------
    This is the ONLY file you ever need to change to update your website.
@@ -38,7 +38,7 @@ window.PORTFOLIO = {
     // Used in the contact block at the bottom.
     location:  "Birmingham, UK",
     linkedin:  "https://www.linkedin.com/in/saikireeti-yenugula-362950221",
-    github:    "",                          // e.g. "https://github.com/saikireeti" or "" to hide
+    github:    "",                          // e.g. "https://github.com/Saikireeti19" or "" to hide
 
     // Your CV. Drop the PDF into  assets/  and put the file name here.
     cvUrl:     "assets/Saikireeti_Yenugula_CV.pdf",
@@ -53,7 +53,7 @@ window.PORTFOLIO = {
     metaDesc:  "Technical project manager with 4 years delivering enterprise technology for major UK insurers and utilities. MBA candidate at Aston University, moving into technology and AI transformation consulting.",
 
     // Set this AFTER your site is live
-    siteUrl:   "https://saikireeti.github.io/portfolio/"
+    siteUrl:   "https://saikireeti19.github.io/portfolio/"
   },
 
 
@@ -139,8 +139,8 @@ window.PORTFOLIO = {
 
 
   /* ==========================================================================
-     5. CASE STUDIES  â† the most important section
-     Each one follows: Context â†’ What I did â†’ Result.
+     5. CASE STUDIES  ← the most important section
+     Each one follows: Context → What I did → Result.
      ========================================================================== */
   caseStudiesHeading: "Selected Work",
   caseStudiesKicker:  "Evidence",
@@ -263,7 +263,7 @@ window.PORTFOLIO = {
   skillsHeading: "Capabilities",
   skillsKicker:  "What I bring",
   skills: [
-    { group: "Project & Delivery",   items: ["Project & Programme Management", "Technical Delivery Management", "Full SDLC (requirements â†’ build â†’ UAT â†’ release â†’ support)", "Planning, Scheduling & Estimation", "Risk & Issue Management", "Agile & Waterfall"] },
+    { group: "Project & Delivery",   items: ["Project & Programme Management", "Technical Delivery Management", "Full SDLC (requirements → build → UAT → release → support)", "Planning, Scheduling & Estimation", "Risk & Issue Management", "Agile & Waterfall"] },
     { group: "Release & Environments", items: ["Release Coordination (TEST/UAT/PROD)", "Deployment & Rollback", "Approval & Audit Compliance", "Production Support", "Incident Management"] },
     { group: "People & Talent",      items: ["Talent Acquisition & Interviewing", "Workforce & Resource Planning", "Candidate Experience & Offer-to-Join Management", "BGV & Onboarding Liaison", "Team Leadership (15+)", "Training & Mentoring", "Employee Engagement"] },
     { group: "Business & Analysis",  items: ["Requirements Analysis", "Stakeholder Management", "Status Reporting", "Process Improvement", "Documentation"] },

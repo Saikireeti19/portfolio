@@ -1,4 +1,4 @@
-﻿# How to change anything on your website
+# How to change anything on your website
 
 **You do not need to know how to code.** Almost everything on this site lives in
 one file, written in plain English with comments.
@@ -24,8 +24,8 @@ That's it. If you follow those three rules you cannot break the site.
 ## How to make an edit (no software needed)
 
 1. Go to your repository on GitHub.
-2. Click into `assets` â†’ `js` â†’ **`content.js`**
-3. Click the **pencil icon** (✏ï¸ Edit this file) at the top right.
+2. Click into `assets` → `js` → **`content.js`**
+3. Click the **pencil icon** (✏️ Edit this file) at the top right.
 4. Change your text.
 5. Scroll to the bottom, type a short note like `Update headline`, and click
    **Commit changes**.
@@ -35,9 +35,9 @@ That's it. If you follow those three rules you cannot break the site.
 
 You broke rule 2 (a missing comma or quote). Fix it in seconds:
 
-1. Go to the repository â†’ click **History** (or the clock icon).
+1. Go to the repository → click **History** (or the clock icon).
 2. Find the commit **before** your change and open it.
-3. Click the `...` menu â†’ **View file** â†’ copy everything.
+3. Click the `...` menu → **View file** → copy everything.
 4. Edit `content.js` and paste it back over the top. Commit.
 
 Your site is never permanently broken — every old version is saved.
@@ -82,7 +82,7 @@ Open `content.js` and find the numbered section.
 Find this in section 1 and put your number between the quotes:
 
 ```js
-phone:     "",          â†’      phone:     "+44 7xxx xxxxxx",
+phone:     "",          →      phone:     "+44 7xxx xxxxxx",
 ```
 
 Leave it as `""` and the phone simply doesn't appear anywhere.
