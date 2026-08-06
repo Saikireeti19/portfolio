@@ -192,7 +192,12 @@
     var ul = q("[data-target-roles]");
     if (!ul) return;
     var roles = list(C.targetRoles).filter(has);
-    if (!roles.length) { ul.remove(); return; }
+    if (!roles.length) {
+      var block = ul.closest ? ul.closest(".rolesblock") : null;
+      if (block) block.remove(); else ul.remove();
+      return;
+    }
+    setText("[data-target-roles-label]", C.targetRolesLabel);
     roles.forEach(function (r) { ul.appendChild(h("li", { text: r })); });
   })();
 

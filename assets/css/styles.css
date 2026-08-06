@@ -292,7 +292,13 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
 .hero__intro{margin-top:18px;max-width:60ch;color:var(--ink-soft);font-size:1.05rem}
 .hero__cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.rolesblock{margin-top:24px}
+.rolesblock__label{
+  font-size:.735rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:9px;
+}
+.rolesblock__label:empty{display:none}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
 .pills li{
   font-size:.82rem;font-weight:500;color:var(--ink-soft);
   padding:6px 13px;border:1px solid var(--line);border-radius:var(--r-pill);

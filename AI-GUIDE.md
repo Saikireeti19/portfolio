@@ -8,7 +8,8 @@ and what you must not break. If you are a human, you probably want
 
 ## 1. Who this belongs to
 
-Saikireeti Yenugula — a **technical project manager** with ~4 years delivering
+Saikireeti Yenugula — **Programmer Analyst at Cognizant** (functionally leading delivery,
+project management and resourcing) with ~4 years delivering
 enterprise technology for major UK insurers and utilities, now an **MBA candidate
 at Aston Business School, Birmingham (UK)**. The site targets:
 
@@ -49,6 +50,7 @@ Additional constraints he has asked for explicitly:
   Interactive; Claude AI Fluency for Small Businesses; Claude Code in Action;
   Claude 101.
 - **"BT" means Base Template**, not "Business Template".
+- **Never state a job title he does not hold.** His real titles are *Programmer Analyst* (Cognizant), *Quadient Analyst / PMO* (Paragon) and *Associate Consultant* (Atos Syntel). "Technical Project Manager" is a **target role**, shown only under the "Targeting" label in the hero. Headlines must describe capability ("Technology Delivery, Project Management & Transformation"), never assert an unheld title.
 - Cyber security consulting is a **target role only**. It is listed under
   "Currently Building" in Capabilities. Never imply security experience.
 

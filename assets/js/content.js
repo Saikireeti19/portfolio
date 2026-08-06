@@ -24,7 +24,7 @@ window.PORTFOLIO = {
     shortName: "Sai Kireeti",              // used in the navbar logo
 
     // The professional headline under your name (like a LinkedIn headline).
-    headline:  "Technical Project Manager — Technology Delivery & Transformation",
+    headline:  "Technology Delivery, Project Management & Transformation",
 
     // The short paragraph in the hero. 2–3 sentences works best.
     intro:     "I manage enterprise technology delivery end to end — requirements, build, test cycles, release and production support — for major UK insurers and utilities. Because I came up through hands-on technical roles, I plan realistically and speak the same language as the engineers I lead. Now completing my MBA at Aston University and moving toward technology and AI transformation consulting.",
@@ -49,8 +49,8 @@ window.PORTFOLIO = {
     photo:     "assets/img/profile.jpg",
 
     // Browser tab title + Google/LinkedIn preview text
-    pageTitle: "Saikireeti Yenugula — Technical Project Manager",
-    metaDesc:  "Technical project manager with 4 years delivering enterprise technology for major UK insurers and utilities. MBA candidate at Aston University, moving into technology and AI transformation consulting.",
+    pageTitle: "Saikireeti Yenugula — Technology Delivery & Project Management",
+    metaDesc:  "Technology delivery and project management professional with 4 years delivering enterprise technology for major UK insurers and utilities. MBA candidate at Aston University, moving into technology and AI transformation consulting.",
 
     // Set this AFTER your site is live
     siteUrl:   "https://saikireeti19.github.io/portfolio/"
@@ -61,6 +61,9 @@ window.PORTFOLIO = {
      2. THE ROLES YOU ARE TARGETING  (small pills in the hero)
      These are roles you WANT — not roles you have already held.
      ========================================================================== */
+  // Shown above the chips so nobody mistakes them for roles already held.
+  targetRolesLabel: "Targeting",
+
   targetRoles: [
     "Technical Project Manager",
     "Project / Delivery Manager",
@@ -150,7 +153,7 @@ window.PORTFOLIO = {
       client:  "Chubb (UK & Australia)",
       org:     "Cognizant",
       period:  "2025 — Present",
-      role:    "Technical Project Manager",
+      role:    "Programmer Analyst — acting project manager for the migration",
       summary: "Migrated an insurer's legacy communication platform onto a modern stack — delivered with zero UAT defects at go-live.",
       context: "Chubb's customer communications ran on a legacy Xpression platform that was slow to change and inconsistent in branding. It needed migrating to Quadient without disrupting live customer communications.",
       actions: [
@@ -172,7 +175,7 @@ window.PORTFOLIO = {
       client:  "Internal — Technology Competency",
       org:     "Cognizant",
       period:  "2025 — Present",
-      role:    "Resourcing & Talent Lead · Onboarding POC (alongside delivery)",
+      role:    "Programmer Analyst — resourcing & onboarding POC alongside delivery",
       summary: "Ran hiring end-to-end for the practice, then acted as the single point of contact that carried every new joiner from offer roll-out through to day one.",
       context: "Delivery commitments were growing faster than the team could staff them, and unfilled roles were putting billable project work at risk. Accepted offers were also the fragile part — candidates go quiet between offer and joining, and a drop-out means starting the whole hire again.",
       actions: [
@@ -195,7 +198,7 @@ window.PORTFOLIO = {
       client:  "Multiple UK insurance & utility brands",
       org:     "Paragon Customer Communications (UK) · Atos Syntel",
       period:  "2022 — 2025",
-      role:    "Delivery Analyst · Production Support · PMO",
+      role:    "Quadient Analyst / Associate Consultant — delivery, support & PMO",
       summary: "Kept high-volume customer communications running for multiple UK brands, coordinating 20–25 releases a day with zero failed deployments.",
       context: "High-volume customer communications for multiple UK brands meant constant production change. Any failed release would land directly on live customer letters, bills and statements.",
       actions: [
@@ -222,7 +225,7 @@ window.PORTFOLIO = {
   experienceKicker:  "Career",
   experience: [
     {
-      role:    "Technical Project Manager — Delivery & Resourcing",
+      role:    "Programmer Analyst — Delivery & Resourcing Lead",
       company: "Cognizant",
       meta:    "Client: Chubb (UK & Australia) · India",
       period:  "Jul 2025 — Present",
@@ -233,7 +236,7 @@ window.PORTFOLIO = {
       ]
     },
     {
-      role:    "Delivery Analyst & PMO",
+      role:    "Quadient Analyst & PMO",
       company: "Paragon Customer Communications (UK)",
       meta:    "Multiple UK insurance & utility brands · India",
       period:  "Feb 2025 — Jul 2025",
