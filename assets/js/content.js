@@ -128,7 +128,7 @@ window.PORTFOLIO = {
     heading: "About",
     kicker:  "Who I am",
     paragraphs: [
-      "I'm a technology delivery professional with nearly four years across three global firms — Cognizant, Paragon and Atos Syntel — building and running enterprise customer-communication platforms for major UK insurers and utilities, including Chubb.",
+      "I'm a technology delivery professional with nearly four years across three global firms — Cognizant, Paragon Customer Communications (UK) and Atos Syntel — building and running enterprise customer-communication platforms for major UK insurers and utilities, including Chubb.",
       "Because I came up through hands-on technical roles, I know how delivery actually works: requirements analysis, development, test cycles, controlled releases, go-live and production support. That's what makes me effective as a project manager — I can plan realistically, spot risk early, and hold a credible technical conversation with the team I'm leading.",
       "Alongside delivery I've run hiring for my practice — screening, interviewing and placing engineers onto the right projects — and I was the named contact every external hire spoke to between accepting an offer and walking through the door, sorting background checks, joining dates and onboarding with HR. Around 30–40 lateral hires have come through that process with me. I've also led the engagement programmes that keep teams motivated.",
       "I'm now studying for my MBA at Aston University in Birmingham. My goal is to move further into technology consulting, particularly AI-enabled transformation."
@@ -195,12 +195,12 @@ window.PORTFOLIO = {
     },
     {
       title:   "Running Delivery & Production Support at Scale",
-      client:  "Multiple UK insurance & utility brands",
+      client:  "Multiple UK clients across insurance, banking and other domains",
       org:     "Paragon Customer Communications (UK) · Atos Syntel",
       period:  "2022 — 2025",
       role:    "Quadient Analyst / Associate Consultant — delivery, support & PMO",
-      summary: "Kept high-volume customer communications running for multiple UK brands, coordinating 20–25 releases a day with zero failed deployments.",
-      context: "High-volume customer communications for multiple UK brands meant constant production change. Any failed release would land directly on live customer letters, bills and statements.",
+      summary: "Kept high-volume customer communications running for multiple UK clients across insurance, banking and other domains, coordinating 20–25 releases a day with zero failed deployments.",
+      context: "High-volume customer communications for multiple UK clients across insurance, banking and other domains meant constant production change. Any failed release would land directly on live customer letters, bills and statements.",
       actions: [
         "Analysed business requirements and built customer communication templates, maintaining style masters for brand consistency.",
         "Coordinated 20–25 controlled releases a day across test and production environments, reviewing work and assigning tasks to the team.",
@@ -238,7 +238,7 @@ window.PORTFOLIO = {
     {
       role:    "Quadient Analyst & PMO",
       company: "Paragon Customer Communications (UK)",
-      meta:    "Multiple UK insurance & utility brands · India",
+      meta:    "Multiple UK clients across insurance, banking and other domains · India",
       period:  "Feb 2025 — Jul 2025",
       points: [
         "Coordinated 20–25 daily production releases with a zero-failed-deployment record.",
@@ -254,7 +254,7 @@ window.PORTFOLIO = {
       points: [
         "Ran production support and controlled releases across environments with full audit compliance.",
         "Supported the Delivery Director on planning, progress tracking and status reporting.",
-        "Delivered consistently — earned a direct in-house move to the client, Paragon."
+        "Delivered consistently — earned a direct in-house move to the client, Paragon Customer Communications (UK)."
       ]
     }
   ],
