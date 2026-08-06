@@ -1,5 +1,5 @@
 ﻿/* ============================================================================
-   âš¡  EDIT YOUR PORTFOLIO HERE  âš¡
+   ⚡  EDIT YOUR PORTFOLIO HERE  ⚡
    ----------------------------------------------------------------------------
    This is the ONLY file you ever need to change to update your website.
    You do NOT need to know how to code.
@@ -24,21 +24,21 @@ window.PORTFOLIO = {
     shortName: "Sai Kireeti",              // used in the navbar logo
 
     // The professional headline under your name (like a LinkedIn headline).
-    headline:  "Technical Project Manager â€” Technology Delivery & Transformation",
+    headline:  "Technical Project Manager — Technology Delivery & Transformation",
 
-    // The short paragraph in the hero. 2â€“3 sentences works best.
-    intro:     "I manage enterprise technology delivery end to end â€” requirements, build, test cycles, release and production support â€” for major UK insurers and utilities. Because I came up through hands-on technical roles, I plan realistically and speak the same language as the engineers I lead. Now completing my MBA at Aston University and moving toward technology and AI transformation consulting.",
+    // The short paragraph in the hero. 2–3 sentences works best.
+    intro:     "I manage enterprise technology delivery end to end — requirements, build, test cycles, release and production support — for major UK insurers and utilities. Because I came up through hands-on technical roles, I plan realistically and speak the same language as the engineers I lead. Now completing my MBA at Aston University and moving toward technology and AI transformation consulting.",
 
     email:     "saikireeti29@gmail.com",
     // Leave phone empty ("") to hide it. Recommended to keep it off a public site.
     phone:     "",
 
-    // The small pill at the very top of the page â€” the first thing anyone reads.
-    status:    "MBA Candidate Â· Aston Business School",
+    // The small pill at the very top of the page — the first thing anyone reads.
+    status:    "MBA Candidate · Aston Business School",
     // Used in the contact block at the bottom.
     location:  "Birmingham, UK",
     linkedin:  "https://www.linkedin.com/in/saikireeti-yenugula-362950221",
-    github:    "",                          // e.g. "https://github.com/LinoVibe" or "" to hide
+    github:    "",                          // e.g. "https://github.com/saikireeti" or "" to hide
 
     // Your CV. Drop the PDF into  assets/  and put the file name here.
     cvUrl:     "assets/Saikireeti_Yenugula_CV.pdf",
@@ -49,7 +49,7 @@ window.PORTFOLIO = {
     photo:     "assets/img/profile.jpg",
 
     // Browser tab title + Google/LinkedIn preview text
-    pageTitle: "Saikireeti Yenugula â€” Technical Project Manager",
+    pageTitle: "Saikireeti Yenugula — Technical Project Manager",
     metaDesc:  "Technical project manager with 4 years delivering enterprise technology for major UK insurers and utilities. MBA candidate at Aston University, moving into technology and AI transformation consulting.",
 
     // Set this AFTER your site is live
@@ -59,7 +59,7 @@ window.PORTFOLIO = {
 
   /* ==========================================================================
      2. THE ROLES YOU ARE TARGETING  (small pills in the hero)
-     These are roles you WANT â€” not roles you have already held.
+     These are roles you WANT — not roles you have already held.
      ========================================================================== */
   targetRoles: [
     "Technical Project Manager",
@@ -71,12 +71,12 @@ window.PORTFOLIO = {
 
 
   /* ==========================================================================
-     3. HEADLINE NUMBERS  (the proof strip â€” this is what hiring managers scan)
+     3. HEADLINE NUMBERS  (the proof strip — this is what hiring managers scan)
      ========================================================================== */
   metrics: [
     { value: "4",       suffix: "yrs", label: "Technology delivery across 3 global firms" },
     { value: "0",       suffix: "",    label: "UAT defects at go-live on a major migration" },
-    { value: "30â€“40",   suffix: "",    label: "Lateral hires guided from offer to day one" },
+    { value: "30–40",   suffix: "",    label: "Lateral hires guided from offer to day one" },
     { value: "15",      suffix: "",    label: "Engineers led and trained" }
   ],
 
@@ -107,7 +107,7 @@ window.PORTFOLIO = {
       {
         label: "More AI-assisted delivery",
         value: 40,
-        note:  "Generative-AI tooling now supports drafting, conversion checks and documentation â€” up around 40% on previous delivery cycles."
+        note:  "Generative-AI tooling now supports drafting, conversion checks and documentation — up around 40% on previous delivery cycles."
       },
       {
         label: "Revenue growth",
@@ -125,13 +125,13 @@ window.PORTFOLIO = {
     heading: "About",
     kicker:  "Who I am",
     paragraphs: [
-      "I'm a technology delivery professional with nearly four years across three global firms â€” Cognizant, Paragon and Atos Syntel â€” building and running enterprise customer-communication platforms for major UK insurers and utilities, including Chubb.",
-      "Because I came up through hands-on technical roles, I know how delivery actually works: requirements analysis, development, test cycles, controlled releases, go-live and production support. That's what makes me effective as a project manager â€” I can plan realistically, spot risk early, and hold a credible technical conversation with the team I'm leading.",
-      "Alongside delivery I've run hiring for my practice â€” screening, interviewing and placing engineers onto the right projects â€” and I was the named contact every external hire spoke to between accepting an offer and walking through the door, sorting background checks, joining dates and onboarding with HR. Around 30â€“40 lateral hires have come through that process with me. I've also led the engagement programmes that keep teams motivated.",
+      "I'm a technology delivery professional with nearly four years across three global firms — Cognizant, Paragon and Atos Syntel — building and running enterprise customer-communication platforms for major UK insurers and utilities, including Chubb.",
+      "Because I came up through hands-on technical roles, I know how delivery actually works: requirements analysis, development, test cycles, controlled releases, go-live and production support. That's what makes me effective as a project manager — I can plan realistically, spot risk early, and hold a credible technical conversation with the team I'm leading.",
+      "Alongside delivery I've run hiring for my practice — screening, interviewing and placing engineers onto the right projects — and I was the named contact every external hire spoke to between accepting an offer and walking through the door, sorting background checks, joining dates and onboarding with HR. Around 30–40 lateral hires have come through that process with me. I've also led the engagement programmes that keep teams motivated.",
       "I'm now studying for my MBA at Aston University in Birmingham. My goal is to move further into technology consulting, particularly AI-enabled transformation."
     ],
     principles: [
-      { title: "Delivery, end to end",              text: "I've owned every stage â€” requirements, build, UAT, release and production support â€” so the plans I make reflect how the work really happens." },
+      { title: "Delivery, end to end",              text: "I've owned every stage — requirements, build, UAT, release and production support — so the plans I make reflect how the work really happens." },
       { title: "Evidence over opinion",             text: "I track what matters: defects, turnaround, SLA adherence, capacity. Decisions follow the data." },
       { title: "Build the team, not just the thing", text: "I trained 15 engineers from zero on a new platform, cutting our reliance on external hiring." }
     ]
@@ -149,9 +149,9 @@ window.PORTFOLIO = {
       title:   "Legacy Platform Migration for a Global Insurer",
       client:  "Chubb (UK & Australia)",
       org:     "Cognizant",
-      period:  "2025 â€” Present",
+      period:  "2025 — Present",
       role:    "Technical Project Manager",
-      summary: "Migrated an insurer's legacy communication platform onto a modern stack â€” delivered with zero UAT defects at go-live.",
+      summary: "Migrated an insurer's legacy communication platform onto a modern stack — delivered with zero UAT defects at go-live.",
       context: "Chubb's customer communications ran on a legacy Xpression platform that was slow to change and inconsistent in branding. It needed migrating to Quadient without disrupting live customer communications.",
       actions: [
         "Planned and led the migration of legacy forms to Quadient, rebuilding them as reusable blocks and templates.",
@@ -169,22 +169,22 @@ window.PORTFOLIO = {
     },
     {
       title:   "Scaling the Team Behind the Delivery",
-      client:  "Internal â€” Technology Competency",
+      client:  "Internal — Technology Competency",
       org:     "Cognizant",
-      period:  "2025 â€” Present",
-      role:    "Resourcing & Talent Lead Â· Onboarding POC (alongside delivery)",
+      period:  "2025 — Present",
+      role:    "Resourcing & Talent Lead · Onboarding POC (alongside delivery)",
       summary: "Ran hiring end-to-end for the practice, then acted as the single point of contact that carried every new joiner from offer roll-out through to day one.",
-      context: "Delivery commitments were growing faster than the team could staff them, and unfilled roles were putting billable project work at risk. Accepted offers were also the fragile part â€” candidates go quiet between offer and joining, and a drop-out means starting the whole hire again.",
+      context: "Delivery commitments were growing faster than the team could staff them, and unfilled roles were putting billable project work at risk. Accepted offers were also the fragile part — candidates go quiet between offer and joining, and a drop-out means starting the whole hire again.",
       actions: [
         "Ran hiring end-to-end: sourcing, screening and technical-panel interviews across technology competencies.",
         "Mapped every candidate to Service Orders (SOs) and project skill requirements so the right people landed on the right work.",
-        "Became the named point of contact for external hires after offer roll-out â€” candidates came to me directly with onboarding questions, background-verification (BGV) problems and date-of-joining changes, and I chased each one through with HR and the internal teams.",
+        "Became the named point of contact for external hires after offer roll-out — candidates came to me directly with onboarding questions, background-verification (BGV) problems and date-of-joining changes, and I chased each one through with HR and the internal teams.",
         "Checked in with every candidate every other day across the offer-to-joining window, so the experience stayed personal and accepted offers did not quietly lapse.",
         "Coordinated induction, access and documentation, and ran process-compliance audits to keep hiring records audit-ready.",
         "Introduced gamified Mentimeter feedback sessions to surface team issues early, escalating them to senior management, and founded 'GammiFriday', a monthly department-wide engagement event."
       ],
       results: [
-        { value: "30â€“40", label: "Lateral hires guided from offer to day one" },
+        { value: "30–40", label: "Lateral hires guided from offer to day one" },
         { value: "~20%",  label: "Faster new-joiner ramp-up" },
         { value: "100%",  label: "Audit-ready hiring records" }
       ],
@@ -193,15 +193,15 @@ window.PORTFOLIO = {
     {
       title:   "Running Delivery & Production Support at Scale",
       client:  "Multiple UK insurance & utility brands",
-      org:     "Paragon Customer Communications (UK) Â· Atos Syntel",
-      period:  "2022 â€” 2025",
-      role:    "Delivery Analyst Â· Production Support Â· PMO",
-      summary: "Kept high-volume customer communications running for multiple UK brands, coordinating 20â€“25 releases a day with zero failed deployments.",
+      org:     "Paragon Customer Communications (UK) · Atos Syntel",
+      period:  "2022 — 2025",
+      role:    "Delivery Analyst · Production Support · PMO",
+      summary: "Kept high-volume customer communications running for multiple UK brands, coordinating 20–25 releases a day with zero failed deployments.",
       context: "High-volume customer communications for multiple UK brands meant constant production change. Any failed release would land directly on live customer letters, bills and statements.",
       actions: [
         "Analysed business requirements and built customer communication templates, maintaining style masters for brand consistency.",
-        "Coordinated 20â€“25 controlled releases a day across test and production environments, reviewing work and assigning tasks to the team.",
-        "Ran production support â€” debugged incidents from job IDs, monitored services and resubmitted failed jobs after queue or network failures.",
+        "Coordinated 20–25 controlled releases a day across test and production environments, reviewing work and assigning tasks to the team.",
+        "Ran production support — debugged incidents from job IDs, monitored services and resubmitted failed jobs after queue or network failures.",
         "Patched and upgraded platform components on servers to keep the environment stable, secure and current.",
         "Automated repetitive configuration and data-mapping work, and owned PMO status reporting for the delivery centre."
       ],
@@ -222,36 +222,36 @@ window.PORTFOLIO = {
   experienceKicker:  "Career",
   experience: [
     {
-      role:    "Technical Project Manager â€” Delivery & Resourcing",
+      role:    "Technical Project Manager — Delivery & Resourcing",
       company: "Cognizant",
-      meta:    "Client: Chubb (UK & Australia) Â· India",
-      period:  "Jul 2025 â€” Present",
+      meta:    "Client: Chubb (UK & Australia) · India",
+      period:  "Jul 2025 — Present",
       points: [
         "Led a 15-member team on a legacy platform migration, delivered with zero UAT defects.",
-        "Owned end-to-end hiring for the practice and acted as the onboarding point of contact for 30â€“40 lateral hires.",
+        "Owned end-to-end hiring for the practice and acted as the onboarding point of contact for 30–40 lateral hires.",
         "Awarded the Cognizant Cheers Award for delivery excellence and clean deployments."
       ]
     },
     {
       role:    "Delivery Analyst & PMO",
       company: "Paragon Customer Communications (UK)",
-      meta:    "Multiple UK insurance & utility brands Â· India",
-      period:  "Feb 2025 â€” Jul 2025",
+      meta:    "Multiple UK insurance & utility brands · India",
+      period:  "Feb 2025 — Jul 2025",
       points: [
-        "Coordinated 20â€“25 daily production releases with a zero-failed-deployment record.",
+        "Coordinated 20–25 daily production releases with a zero-failed-deployment record.",
         "Owned PMO planning, governance and status reporting across 60+ activities.",
         "Built customer communication templates and multi-format document outputs."
       ]
     },
     {
-      role:    "Associate Consultant â€” Delivery & Production Support",
+      role:    "Associate Consultant — Delivery & Production Support",
       company: "Atos Syntel",
-      meta:    "Client: Paragon Customer Communications (UK) Â· India",
-      period:  "Sep 2022 â€” Feb 2025",
+      meta:    "Client: Paragon Customer Communications (UK) · India",
+      period:  "Sep 2022 — Feb 2025",
       points: [
         "Ran production support and controlled releases across environments with full audit compliance.",
         "Supported the Delivery Director on planning, progress tracking and status reporting.",
-        "Delivered consistently â€” earned a direct in-house move to the client, Paragon."
+        "Delivered consistently — earned a direct in-house move to the client, Paragon."
       ]
     }
   ],
@@ -269,8 +269,8 @@ window.PORTFOLIO = {
     { group: "Business & Analysis",  items: ["Requirements Analysis", "Stakeholder Management", "Status Reporting", "Process Improvement", "Documentation"] },
     { group: "Technology",           items: ["Quadient Inspire (Designer, Interactive, Scaler, ICM)", "JavaScript", "HTML / CSS", "MySQL", "Windows / Linux"] },
     { group: "Tools & Data",         items: ["JIRA", "ServiceNow", "Microsoft Excel", "Microsoft Office Suite", "Power BI (Basic)", "Generative AI (Claude)"] },
-    // Honest "direction of travel" â€” things you are actively learning, not claiming.
-    { group: "Currently Building",   items: ["AI Transformation & Enablement", "Cyber Security Fundamentals", "MBA â€” Strategy & Leadership"] }
+    // Honest "direction of travel" — things you are actively learning, not claiming.
+    { group: "Currently Building",   items: ["AI Transformation & Enablement", "Cyber Security Fundamentals", "MBA — Strategy & Leadership"] }
   ],
 
 
@@ -284,15 +284,15 @@ window.PORTFOLIO = {
     {
       highlight: true,
       badge:  "Current",
-      period: "Sep 2026 â€” Sep 2027",
-      degree: "MBA â€” Master of Business Administration",
-      school: "Aston Business School, Aston University Â· Birmingham, UK",
-      detail: "Triple-accredited business school (AACSB, AMBA and EQUIS) â€” a standard held by fewer than 1% of business schools worldwide. Studying strategy, leadership and transformation."
+      period: "Sep 2026 — Sep 2027",
+      degree: "MBA — Master of Business Administration",
+      school: "Aston Business School, Aston University · Birmingham, UK",
+      detail: "Triple-accredited business school (AACSB, AMBA and EQUIS) — a standard held by fewer than 1% of business schools worldwide. Studying strategy, leadership and transformation."
     },
     {
       highlight: false,
       period: "2024",
-      degree: "B.Tech â€” Electronics & Communication Engineering",
+      degree: "B.Tech — Electronics & Communication Engineering",
       school: "India",
       detail: ""
     }
@@ -301,9 +301,9 @@ window.PORTFOLIO = {
   certifications: [
     "Microsoft Azure Fundamentals (AZ-900)",
     "Power BI (Basic)",
-    "Quadient Inspire â€” Designer",
-    "Quadient Inspire â€” Scaler",
-    "Quadient Inspire â€” Interactive",
+    "Quadient Inspire — Designer",
+    "Quadient Inspire — Scaler",
+    "Quadient Inspire — Interactive",
     "Claude: AI Fluency for Small Businesses",
     "Claude Code in Action",
     "Claude 101"
@@ -322,11 +322,11 @@ window.PORTFOLIO = {
   beyondKicker:  "Community & culture",
   beyond: [
     {
-      title: "Campus Outreach â€” Student Mentoring",
+      title: "Campus Outreach — Student Mentoring",
       text:  "Supported company outreach programmes at colleges, speaking with students about using LinkedIn effectively, building professional networks, and starting an IT career in the age of AI."
     },
     {
-      title: "Employee Engagement â€” 'GammiFriday'",
+      title: "Employee Engagement — 'GammiFriday'",
       text:  "Founded a monthly department-wide engagement event, and introduced gamified Mentimeter sessions that surfaced team concerns early so management could act on them."
     },
     {
@@ -342,7 +342,7 @@ window.PORTFOLIO = {
   contact: {
     heading: "Let's talk",
     kicker:  "Contact",
-    text:    "I'm open to technical project management, delivery and technology consulting roles â€” including internships and part-time work alongside my MBA.",
+    text:    "I'm open to technical project management, delivery and technology consulting roles — including internships and part-time work alongside my MBA.",
     // Short badge line. Leave "" to hide.
     availability: "Currently studying in Birmingham, UK",
     // Longer availability detail. Leave "" to hide.
@@ -355,8 +355,8 @@ window.PORTFOLIO = {
      ========================================================================== */
   settings: {
     // Accent colour used for links, buttons and highlights.
-    // Deep navy blue â€” the professional-services standard, and high contrast.
-    // Other good options: "#1d4ed8" (brighter navy) Â· "#0f766e" (teal) Â· "#334155" (graphite)
+    // Deep navy blue — the professional-services standard, and high contrast.
+    // Other good options: "#1d4ed8" (brighter navy) · "#0f766e" (teal) · "#334155" (graphite)
     accent: "#1e40af",
     // Which theme loads first for new visitors: "light", "dark", or "system".
     defaultTheme: "system",

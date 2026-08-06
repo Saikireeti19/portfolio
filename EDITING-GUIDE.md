@@ -15,7 +15,7 @@ assets/js/content.js
 
 1. Only change the text **inside the "quotes"**.
 2. Keep every comma `,` and every `{ }` `[ ]` exactly where it is.
-3. To hide something, leave it empty: `""` â€” or empty a whole list: `[]`
+3. To hide something, leave it empty: `""` — or empty a whole list: `[]`
 
 That's it. If you follow those three rules you cannot break the site.
 
@@ -25,7 +25,7 @@ That's it. If you follow those three rules you cannot break the site.
 
 1. Go to your repository on GitHub.
 2. Click into `assets` â†’ `js` â†’ **`content.js`**
-3. Click the **pencil icon** (âœï¸ Edit this file) at the top right.
+3. Click the **pencil icon** (✏ï¸ Edit this file) at the top right.
 4. Change your text.
 5. Scroll to the bottom, type a short note like `Update headline`, and click
    **Commit changes**.
@@ -40,15 +40,15 @@ You broke rule 2 (a missing comma or quote). Fix it in seconds:
 3. Click the `...` menu â†’ **View file** â†’ copy everything.
 4. Edit `content.js` and paste it back over the top. Commit.
 
-Your site is never permanently broken â€” every old version is saved.
+Your site is never permanently broken — every old version is saved.
 
 ---
 
-## Common jobs â€” exactly where to look
+## Common jobs — exactly where to look
 
 Open `content.js` and find the numbered section.
 
-| I want to changeâ€¦ | Go to section | Field |
+| I want to change… | Go to section | Field |
 |---|---|---|
 | My name / the navbar name | 1. THE BASICS | `fullName`, `shortName` |
 | The line under my name | 1. THE BASICS | `headline` |
@@ -92,7 +92,7 @@ Leave it as `""` and the phone simply doesn't appear anywhere.
 Upload your new photo into `assets/img/` and name it **exactly** `profile.jpg`
 (overwrite the old one). Nothing else to change.
 
-- Portrait shape works best (taller than wide), around 800Ã—1000 pixels.
+- Portrait shape works best (taller than wide), around 800×1000 pixels.
 - Keep it under about 400 KB so the site stays fast.
 - If the file is missing, the site automatically shows your initials instead.
 
@@ -113,20 +113,20 @@ In section 3b, each dial looks like this:
 {
   label: "Revenue growth",
   value: 60,
-  note:  "Higher delivery throughput grew the account's revenueâ€¦"
+  note:  "Higher delivery throughput grew the account's revenue…"
 },
 ```
 
-`value` is a plain number (no `%` sign â€” the site adds that).
+`value` is a plain number (no `%` sign — the site adds that).
 
 ### Add a new dial
 
-Copy one whole `{ â€¦ },` block including the comma, paste it below, and edit it.
+Copy one whole `{ … },` block including the comma, paste it below, and edit it.
 Delete a block to remove a dial. **Keep at least one.**
 
 ### Add a new case study
 
-In section 5, copy one entire `{ â€¦ },` block and edit the copy. Keep the same
+In section 5, copy one entire `{ … },` block and edit the copy. Keep the same
 field names. `results` shows the big coloured numbers; `tags` are the little
 chips at the bottom.
 
@@ -144,13 +144,13 @@ The section disappears cleanly, including its menu link.
 
 ## Asking an AI to make changes for you
 
-This works well. Give the AI (ChatGPT, Claude, Geminiâ€¦) your repository link and
+This works well. Give the AI (ChatGPT, Claude, Gemini…) your repository link and
 a prompt like:
 
 ```
 Here is my portfolio website repository: <paste your repo link>
 
-Please read AI-GUIDE.md first â€” it explains the architecture and the rules.
+Please read AI-GUIDE.md first — it explains the architecture and the rules.
 
 I want you to: <describe your change in plain English>
 
@@ -169,7 +169,7 @@ architecture, the accessibility rules, and the facts it must not change.
 
 - **You cannot break it permanently.** Every version is saved in GitHub history.
 - **Nothing is secret in this repo.** Never put passwords or private documents here
-  â€” it is a public website.
+  — it is a public website.
 - The site works in light and dark mode, follows the visitor's system setting,
   and remembers whatever they choose.
 - It works on phones, tablets and desktops, and prints cleanly if a recruiter

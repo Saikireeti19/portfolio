@@ -1,4 +1,4 @@
-﻿# Saikireeti Yenugula â€” Portfolio
+﻿# Saikireeti Yenugula — Portfolio
 
 A fast, accessible, one-page professional portfolio for a **technical project
 manager and MBA candidate**. No frameworks, no build step, no dependencies.
@@ -9,10 +9,10 @@ manager and MBA candidate**. No frameworks, no build step, no dependencies.
 
 ## Which document do I need?
 
-| You areâ€¦ | Read this |
+| You are… | Read this |
 |---|---|
-| **Me, wanting to change some text** | **[EDITING-GUIDE.md](EDITING-GUIDE.md)** â€” plain English, no coding |
-| An **AI assistant** asked to work on this | **[AI-GUIDE.md](AI-GUIDE.md)** â€” architecture, rules, invariants |
+| **Me, wanting to change some text** | **[EDITING-GUIDE.md](EDITING-GUIDE.md)** — plain English, no coding |
+| An **AI assistant** asked to work on this | **[AI-GUIDE.md](AI-GUIDE.md)** — architecture, rules, invariants |
 | Setting it up / deploying | this file, below |
 
 ---
@@ -50,14 +50,14 @@ themes, no horizontal overflow from 375px up, and it prints cleanly.
 
 ---
 
-## PART 1 â€” Putting it on GitHub (one time only)
+## PART 1 — Putting it on GitHub (one time only)
 
 ### Step 1. Create the repository
 
-1. Go to **https://github.com/new** (sign in as `LinoVibe`).
+1. Go to **https://github.com/new** (sign in as `saikireeti`).
 2. **Repository name:** `portfolio`
 3. **Description:** `My professional portfolio website`
-4. Choose **Public** â€” this is required for free GitHub Pages.
+4. Choose **Public** — this is required for free GitHub Pages.
 5. Do **NOT** tick "Add a README file" (we already have one).
 6. Click **Create repository**.
 
@@ -67,8 +67,8 @@ The easiest way, no commands needed:
 
 1. On the new empty repository page, click **"uploading an existing file"**.
 2. Open the `portfolio` folder on your computer.
-3. Select **everything inside it** â€” `index.html`, `README.md`, `.nojekyll` and the
-   whole `assets` folder â€” and drag it all into the browser window.
+3. Select **everything inside it** — `index.html`, `README.md`, `.nojekyll` and the
+   whole `assets` folder — and drag it all into the browser window.
    - If dragging the folder doesn't work, drag `index.html` first, then use
      **Add file â†’ Upload files** again for the `assets` folder.
 4. In the "Commit changes" box type: `Add portfolio site`
@@ -83,7 +83,7 @@ The easiest way, no commands needed:
 2. In the left sidebar click **Pages**.
 3. Under **Source** choose **Deploy from a branch**.
 4. Under **Branch** choose **main**, keep the folder as **/ (root)**, click **Save**.
-5. Wait about 1â€“2 minutes, then refresh the page. GitHub will show:
+5. Wait about 1–2 minutes, then refresh the page. GitHub will show:
    *"Your site is live at https://saikireeti.github.io/portfolio/"*
 
 ### Step 4. Check it worked
@@ -95,7 +95,7 @@ You should see your name, your photo, the blue metric strip, and the three
 
 ---
 
-## PART 2 â€” Updating the site later
+## PART 2 — Updating the site later
 
 You never need a computer or any software. Do it straight on GitHub:
 
@@ -109,7 +109,7 @@ You never need a computer or any software. Do it straight on GitHub:
 
 1. Only change text **inside the "quotes"**.
 2. Keep every comma `,` and every `{ }` `[ ]` exactly where it is.
-3. To hide something, make it empty: `""` â€” or empty a whole list: `[]`
+3. To hide something, make it empty: `""` — or empty a whole list: `[]`
 
 If the page ever goes blank after an edit, you broke rule 2. Press
 **Ctrl + Z** to undo in the GitHub editor, or open the previous version from the
@@ -119,7 +119,7 @@ repository's **History** and copy it back.
 
 ## Common jobs
 
-| I want toâ€¦ | Do this |
+| I want to… | Do this |
 |---|---|
 | Change my photo | Upload a new square/portrait photo to `assets/img/` named exactly `profile.jpg` |
 | Change my CV | Upload your new PDF to `assets/` then update `cvUrl` in `content.js` |
@@ -134,7 +134,7 @@ repository's **History** and copy it back.
 
 ## Previewing on your own computer (optional)
 
-You need a local web server â€” opening `index.html` by double-clicking works, but a
+You need a local web server — opening `index.html` by double-clicking works, but a
 server matches how GitHub Pages behaves. With Python installed:
 
 ```bash
