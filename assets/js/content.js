@@ -345,11 +345,11 @@ window.PORTFOLIO = {
   contact: {
     heading: "Let's talk",
     kicker:  "Contact",
-    text:    "I'm open to technical project management, delivery and technology consulting roles — including internships and part-time work alongside my MBA.",
+    text:    "I am open to project management, delivery and technology consulting roles, and to wider management positions where a delivery background transfers well. I pick up new technologies and domains quickly and genuinely enjoy doing so, so I welcome roles that stretch me into unfamiliar ground — including internships and part-time work alongside my MBA.",
     // Short badge line. Leave "" to hide.
     availability: "Currently studying in Birmingham, UK",
     // Longer availability detail. Leave "" to hide.
-    availabilityNote: "Open to relocating anywhere in the UK for full-time roles after completing my course. Available remotely, or on-site around Birmingham, for internship and part-time roles."
+    availabilityNote: "Fully mobile across the UK for permanent roles on completion of my MBA. For internships and part-time work I am available immediately — remotely, or on-site in and around Birmingham."
   },
 
 
