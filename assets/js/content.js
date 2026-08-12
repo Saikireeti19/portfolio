@@ -27,7 +27,7 @@ window.PORTFOLIO = {
     headline:  "Technology Delivery, Project Management & Transformation",
 
     // The short paragraph in the hero. 2–3 sentences works best.
-    intro:     "I manage enterprise technology delivery end to end — requirements, build, test cycles, release and production support — for major UK insurers and utilities. Because I came up through hands-on technical roles, I plan realistically and speak the same language as the engineers I lead. Now completing my MBA at Aston University and moving toward technology and AI transformation consulting.",
+    intro:     "I manage enterprise technology delivery end to end — requirements, build, test cycles, release and production support — for major UK insurers and utilities. Because I came up through hands-on technical roles, I plan realistically and speak the same language as the engineers I lead. Alongside this I am taking an MBA at Aston Business School and moving toward technology and AI transformation consulting.",
 
     email:     "saikireeti29@gmail.com",
     // Leave phone empty ("") to hide it. Recommended to keep it off a public site.
@@ -131,7 +131,7 @@ window.PORTFOLIO = {
       "I'm a technology delivery professional with nearly four years across three global firms — Cognizant, Paragon Customer Communications (UK) and Atos Syntel — building and running enterprise customer-communication platforms for major UK insurers and utilities, including Chubb.",
       "Because I came up through hands-on technical roles, I know how delivery actually works: requirements analysis, development, test cycles, controlled releases, go-live and production support. That's what makes me effective as a project manager — I can plan realistically, spot risk early, and hold a credible technical conversation with the team I'm leading.",
       "Alongside delivery I've run hiring for my practice — screening, interviewing and placing engineers onto the right projects — and I was the named contact every external hire spoke to between accepting an offer and walking through the door, sorting background checks, joining dates and onboarding with HR. Around 30–40 lateral hires have come through that process with me. I've also led the engagement programmes that keep teams motivated.",
-      "I'm now studying for my MBA at Aston University in Birmingham. My goal is to move further into technology consulting, particularly AI-enabled transformation."
+      "I am undertaking my MBA at Aston Business School in Birmingham (Sep 2026 to Sep 2027). My goal is to move further into technology consulting, particularly AI-enabled transformation."
     ],
     principles: [
       { title: "Delivery, end to end",              text: "I've owned every stage — requirements, build, UAT, release and production support — so the plans I make reflect how the work really happens." },
@@ -347,7 +347,7 @@ window.PORTFOLIO = {
     kicker:  "Contact",
     text:    "I am open to project management, delivery and technology consulting roles, and to wider management positions where a delivery background transfers well. I pick up new technologies and domains quickly and genuinely enjoy doing so, so I welcome roles that stretch me into unfamiliar ground — including internships and part-time work alongside my MBA.",
     // Short badge line. Leave "" to hide.
-    availability: "Currently studying in Birmingham, UK",
+    availability: "MBA at Aston Business School · Birmingham, UK",
     // Longer availability detail. Leave "" to hide.
     availabilityNote: "Fully mobile across the UK for permanent roles on completion of my MBA. For internships and part-time work I am available immediately — remotely, or on-site in and around Birmingham."
   },
