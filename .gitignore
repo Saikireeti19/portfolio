@@ -2,3 +2,6 @@
 Thumbs.db
 desktop.ini
 *.tmp
+
+# private working notes - must never be published
+HANDOVER.md
