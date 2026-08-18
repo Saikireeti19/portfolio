@@ -52,7 +52,7 @@ window.PORTFOLIO = {
     // Used in the contact block at the bottom.
     location:  "Birmingham, UK",
     linkedin:  "https://www.linkedin.com/in/saikireeti-yenugula-362950221",
-    /* DELIBERATELY EMPTY — decided 2026-08-12. He does not want a GitHub link on
+    /* DELIBERATELY EMPTY — decided 2026-08-19. He does not want a GitHub link on
        the portfolio. Leave this as "" and do not "helpfully" fill it in. */
     github:    "",
 
@@ -333,7 +333,7 @@ window.PORTFOLIO = {
     { group: "Technology", subgroups: [
       { label: "Customer Communications", items: ["Quadient Inspire Designer", "Interactive", "Scaler", "Content Manager", "OpenText Xpression"] },
       /* Java, Python, PL/SQL and Perl were proposed and then withdrawn on
-         2026-08-12 — he does not want to claim them. Do not add them back. */
+         2026-08-19 — he does not want to claim them. Do not add them back. */
       { label: "Programming & Data",      items: ["SQL / MySQL", "JavaScript"] },
       { label: "Web",                     items: ["HTML", "CSS"] },
       { label: "Platforms & Messaging",   items: ["Linux", "Windows", "RabbitMQ"] }
