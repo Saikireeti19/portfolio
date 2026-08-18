@@ -961,8 +961,10 @@
       if (nav) nav.classList.toggle("is-stuck", y > 8);
       if (fill) {
         var docH = document.documentElement.scrollHeight - window.innerHeight;
-        var pct = docH > 0 ? (y / docH) * 100 : 0;
-        fill.style.width = Math.max(0, Math.min(100, pct)) + "%";
+        var ratio = docH > 0 ? y / docH : 0;
+        // scaleX, not width — a transform is composited, whereas changing width
+        // forces a layout pass on every scroll frame.
+        fill.style.transform = "scaleX(" + Math.max(0, Math.min(1, ratio)) + ")";
       }
       ticking = false;
     }
