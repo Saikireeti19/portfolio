@@ -24,21 +24,37 @@ window.PORTFOLIO = {
     shortName: "Sai Kireeti",              // used in the navbar logo
 
     // The professional headline under your name (like a LinkedIn headline).
-    headline:  "Technology Delivery, Project Management & Transformation",
+    // Describes CAPABILITY, never a job title you have not held.
+    headline:  "Technical Project Management | Technology Consulting | AI Transformation",
 
     // The short paragraph in the hero. 2–3 sentences works best.
-    intro:     "I manage enterprise technology delivery end to end — requirements, build, test cycles, release and production support — for major UK insurers and utilities. Because I came up through hands-on technical roles, I plan realistically and speak the same language as the engineers I lead. Alongside this I am taking an MBA at Aston Business School and moving toward technology and AI transformation consulting.",
+    intro:     "Four years delivering enterprise technology across Cognizant, Paragon Customer Communications (UK) and Atos Syntel — project delivery, PMO, migration programmes, production support and stakeholder management. Because I came up through hands-on technical roles, I plan realistically and speak the same language as the engineers I lead. I begin an MBA at Aston Business School in September 2026, moving into project management and technology consulting.",
 
     email:     "saikireeti29@gmail.com",
-    // Leave phone empty ("") to hide it. Recommended to keep it off a public site.
+
+    /* ►► YOUR PHONE NUMBER GOES HERE ◄◄
+       You do not have a UK number yet. When you get one, put it between the
+       quotes below exactly as you would write it, for example:
+           phone:     "+44 7123 456789",
+       Save, and it appears by itself in TWO places — the contact block at the
+       bottom of the page and the footer — as a tappable link on a phone.
+       Nothing else needs changing. Leave it as "" and both stay hidden. */
     phone:     "",
 
     // The small pill at the very top of the page — the first thing anyone reads.
     status:    "MBA Candidate · Aston Business School",
+
+    // Second pill next to the one above. Recruiters scan for availability first,
+    // so it is stated in the very first line of the page. Keep it SHORT — a long
+    // one wraps onto two lines on a phone. Leave "" to hide the pill entirely.
+    availabilityBadge: "Open to UK opportunities",
+
     // Used in the contact block at the bottom.
     location:  "Birmingham, UK",
     linkedin:  "https://www.linkedin.com/in/saikireeti-yenugula-362950221",
-    github:    "",                          // e.g. "https://github.com/Saikireeti19" or "" to hide
+    /* DELIBERATELY EMPTY — decided 2026-08-12. He does not want a GitHub link on
+       the portfolio. Leave this as "" and do not "helpfully" fill it in. */
+    github:    "",
 
     // Your CV. Drop the PDF into  assets/  and put the file name here.
     cvUrl:     "assets/Saikireeti_Yenugula_CV.pdf",
@@ -76,11 +92,17 @@ window.PORTFOLIO = {
   /* ==========================================================================
      3. HEADLINE NUMBERS  (the proof strip — this is what hiring managers scan)
      ========================================================================== */
+  /* Six proof tiles, laid out 3 + 3. Every figure here must be one you can defend
+     in an interview — two zeros, a percentage and three counts. Do NOT add a
+     precise-looking number you cannot source: "zero failed deployments" is both
+     true and stronger than an invented "99.8% success rate". */
   metrics: [
-    { value: "4",       suffix: "yrs", label: "Technology delivery across 3 global firms" },
+    { value: "4",       suffix: "yrs", label: "UK client delivery across 3 global firms" },
     { value: "0",       suffix: "",    label: "UAT defects at go-live on a major migration" },
-    { value: "30–40",   suffix: "",    label: "Lateral hires guided from offer to day one" },
-    { value: "15",      suffix: "",    label: "Engineers led and trained" }
+    { value: "0",       suffix: "",    label: "Failed deployments across 10+ releases a day" },
+    { value: "30",      suffix: "%",   label: "Less development time after automation" },
+    { value: "15",      suffix: "",    label: "Engineers led and trained" },
+    { value: "30–40",   suffix: "",    label: "Lateral hires guided from offer to day one" }
   ],
 
 
@@ -94,7 +116,7 @@ window.PORTFOLIO = {
   impact: {
     kicker:   "Measured impact",
     heading:  "What the automation delivered",
-    note:     "We built a converter that turns PDPX files into JLD for development in the Quadient suite. Every figure below is measured against the manual, pre-automation way of working.",
+    note:     "At Cognizant we built a converter that turns PDPX files into JLD for development in the Quadient suite. Every figure below is measured against the manual, pre-automation way of working.",
     baseline: "Hover or tab a dial for detail.",
     items: [
       {
@@ -111,12 +133,32 @@ window.PORTFOLIO = {
         label: "More AI-assisted delivery",
         value: 40,
         note:  "Generative-AI tooling now supports drafting, conversion checks and documentation — up around 40% on previous delivery cycles."
-      },
-      {
-        label: "Revenue growth",
-        value: 60,
-        note:  "Higher delivery throughput grew the account's revenue compared with the pre-automation baseline."
       }
+      /* The 60% account-revenue-growth dial was REMOVED on request: it invites a
+         question about absolute figures he cannot disclose. The figure is still
+         recorded in HANDOVER.md if it is ever needed for an interview. */
+    ]
+  },
+
+
+  /* ==========================================================================
+     3c. CAREER DIRECTION
+     Sits directly under the numbers and BEFORE "About" on purpose: it answers
+     "why is someone from a technical background applying for a PM role?" before
+     a recruiter has time to wonder. Empty the "stages" list AND the paragraphs
+     to hide the whole section.
+     ========================================================================== */
+  careerDirection: {
+    kicker:  "Career direction",
+    heading: "Technology → Delivery → Transformation",
+    stages: [
+      { label: "Technology",     detail: "Customer communications development, production support and platform upgrades." },
+      { label: "Delivery",       detail: "Release coordination, PMO governance and leading a 15-engineer team to a zero-defect go-live." },
+      { label: "Transformation", detail: "Automation tooling, AI-assisted delivery and the move into technology consulting." }
+    ],
+    paragraphs: [
+      "My career has moved from hands-on development in customer communications technology into technical delivery, project coordination and business transformation.",
+      "I begin an MBA at Aston Business School in September 2026 to build the strategic, leadership and commercial perspective that technology project management and consulting demand."
     ]
   },
 
@@ -128,10 +170,10 @@ window.PORTFOLIO = {
     heading: "About",
     kicker:  "Who I am",
     paragraphs: [
-      "I'm a technology delivery professional with nearly four years across three global firms — Cognizant, Paragon Customer Communications (UK) and Atos Syntel — building and running enterprise customer-communication platforms for major UK insurers and utilities, including Chubb.",
-      "Because I came up through hands-on technical roles, I know how delivery actually works: requirements analysis, development, test cycles, controlled releases, go-live and production support. That's what makes me effective as a project manager — I can plan realistically, spot risk early, and hold a credible technical conversation with the team I'm leading.",
-      "Alongside delivery I've run hiring for my practice — screening, interviewing and placing engineers onto the right projects — and I was the named contact every external hire spoke to between accepting an offer and walking through the door, sorting background checks, joining dates and onboarding with HR. Around 30–40 lateral hires have come through that process with me. I've also led the engagement programmes that keep teams motivated.",
-      "I am undertaking my MBA at Aston Business School in Birmingham (Sep 2026 to Sep 2027). My goal is to move further into technology consulting, particularly AI-enabled transformation."
+      "Four years across three global firms — Cognizant, Paragon Customer Communications (UK) and Atos Syntel — building and running enterprise customer-communication platforms for major UK insurers and utilities, including Chubb.",
+      "I came up through hands-on technical roles, so I know how delivery actually works: requirements, build, test cycles, controlled releases, go-live and support. On the Chubb migration I led a 15-member team to go-live with zero UAT defects — and trained all 15 on the platform from scratch.",
+      "I also ran hiring for my practice, and was the named contact every external hire spoke to between accepting an offer and day one. Around 30–40 lateral hires came through that process with me.",
+      "I begin an MBA at Aston Business School in September 2026, moving further into technology consulting and AI-enabled transformation."
     ],
     principles: [
       { title: "Delivery, end to end",              text: "I've owned every stage — requirements, build, UAT, release and production support — so the plans I make reflect how the work really happens." },
@@ -199,11 +241,11 @@ window.PORTFOLIO = {
       org:     "Paragon Customer Communications (UK) · Atos Syntel",
       period:  "2022 — 2025",
       role:    "Quadient Analyst / Associate Consultant — delivery, support & PMO",
-      summary: "Kept high-volume customer communications running for multiple UK clients across insurance, banking and other domains, coordinating 20–25 releases a day with zero failed deployments.",
+      summary: "Kept high-volume customer communications running for multiple UK clients across insurance, banking and other domains, coordinating 10+ releases a day with zero failed deployments.",
       context: "High-volume customer communications for multiple UK clients across insurance, banking and other domains meant constant production change. Any failed release would land directly on live customer letters, bills and statements.",
       actions: [
         "Analysed business requirements and built customer communication templates, maintaining style masters for brand consistency.",
-        "Coordinated 20–25 controlled releases a day across test and production environments, reviewing work and assigning tasks to the team.",
+        "Coordinated 10+ controlled releases a day across test and production environments, reviewing work and assigning tasks to the team.",
         "Ran production support — debugged incidents from job IDs, monitored services and resubmitted failed jobs after queue or network failures.",
         "Patched and upgraded platform components on servers to keep the environment stable, secure and current.",
         "Automated repetitive configuration and data-mapping work, and owned PMO status reporting for the delivery centre."
@@ -230,21 +272,29 @@ window.PORTFOLIO = {
       meta:    "Client: Chubb (UK & Australia) · India",
       period:  "Jul 2025 — Present",
       points: [
-        "Led a 15-member team on a legacy platform migration, delivered with zero UAT defects.",
-        "Owned end-to-end hiring for the practice and acted as the onboarding point of contact for 30–40 lateral hires.",
+        "Led a 15-member team on the Chubb legacy platform migration, delivered with zero UAT defects at go-live.",
+        "Built a PDPX→JLD converter that removed the manual rebuild step — around 30% less development time and 30% faster form delivery.",
+        "Trained all 15 engineers on the platform from scratch, cutting the practice's reliance on external hiring by around 40%.",
+        "Owned end-to-end hiring for the practice and was the named onboarding contact for 30–40 lateral hires.",
+        "Owned the release path across TEST, UAT and PROD with full approval and audit compliance.",
         "Awarded the Cognizant Cheers Award for delivery excellence and clean deployments."
-      ]
+      ],
+      // Small tags under the bullets. Only list what you genuinely used in THIS role.
+      tech: ["Quadient Inspire", "JIRA", "ServiceNow", "Generative AI (Claude)", "Agile & Waterfall"]
     },
     {
       role:    "Quadient Analyst & PMO",
       company: "Paragon Customer Communications (UK)",
-      meta:    "Multiple UK clients across insurance, banking and other domains · India",
+      meta:    "UK business · Multiple UK clients across insurance, banking and other domains · India",
       period:  "Feb 2025 — Jul 2025",
       points: [
-        "Coordinated 20–25 daily production releases with a zero-failed-deployment record.",
+        "Employed in-house by this UK business, having delivered on its account for three years from Atos Syntel.",
+        "Coordinated 10+ production releases a day with a zero-failed-deployment record.",
         "Owned PMO planning, governance and status reporting across 60+ activities.",
-        "Built customer communication templates and multi-format document outputs."
-      ]
+        "Analysed business requirements and turned them into customer communication templates and multi-format document outputs.",
+        "Maintained Style Masters so every communication stayed on-brand across UK insurance, banking and utility brands."
+      ],
+      tech: ["Quadient Inspire", "Requirements Analysis", "Style Masters", "Multi-format Output", "PMO Reporting"]
     },
     {
       role:    "Associate Consultant — Delivery & Production Support",
@@ -252,10 +302,11 @@ window.PORTFOLIO = {
       meta:    "Client: Paragon Customer Communications (UK) · India",
       period:  "Sep 2022 — Feb 2025",
       points: [
-        "Ran production support and controlled releases across environments with full audit compliance.",
+        "Ran controlled releases across TEST, UAT and PROD at 10+ a day, with full audit compliance and no failed deployments.",
         "Supported the Delivery Director on planning, progress tracking and status reporting.",
-        "Delivered consistently — earned a direct in-house move to the client, Paragon Customer Communications (UK)."
-      ]
+        "Debugged live incidents from job IDs, monitored services and resubmitted failed jobs after queue and network failures."
+      ],
+      tech: ["Quadient Inspire", "Windows / Linux", "RabbitMQ", "Release & Deployment", "Production Support"]
     }
   ],
 
@@ -266,14 +317,30 @@ window.PORTFOLIO = {
   skillsHeading: "Capabilities",
   skillsKicker:  "What I bring",
   skills: [
-    { group: "Project & Delivery",   items: ["Project & Programme Management", "Technical Delivery Management", "Full SDLC (requirements → build → UAT → release → support)", "Planning, Scheduling & Estimation", "Risk & Issue Management", "Agile & Waterfall"] },
-    { group: "Release & Environments", items: ["Release Coordination (TEST/UAT/PROD)", "Deployment & Rollback", "Approval & Audit Compliance", "Production Support", "Incident Management"] },
-    { group: "People & Talent",      items: ["Talent Acquisition & Interviewing", "Workforce & Resource Planning", "Candidate Experience & Offer-to-Join Management", "BGV & Onboarding Liaison", "Team Leadership (15+)", "Training & Mentoring", "Employee Engagement"] },
-    { group: "Business & Analysis",  items: ["Requirements Analysis", "Stakeholder Management", "Status Reporting", "Process Improvement", "Documentation"] },
-    { group: "Technology",           items: ["Quadient Inspire (Designer, Interactive, Scaler, ICM)", "JavaScript", "HTML / CSS", "MySQL", "Windows / Linux"] },
-    { group: "Tools & Data",         items: ["JIRA", "ServiceNow", "Microsoft Excel", "Microsoft Office Suite", "Power BI (Basic)", "Generative AI (Claude)"] },
+    /* Kept deliberately short. Each group maps to a role you are targeting, so the
+       list reads as a considered profile rather than a keyword dump. Things a
+       recruiter already assumes (Documentation, MS Office) are left out on purpose
+       — listing them only dilutes the items that actually matter. */
+    { group: "Project & Delivery Management", items: ["Project & Programme Management", "Full SDLC — requirements → build → UAT → release → support", "Planning, Estimation & Risk Management", "Release Coordination (TEST / UAT / PROD)", "Production Support & Incident Management", "Agile & Waterfall"] },
+    { group: "Business Analysis & Governance", items: ["Requirements Analysis", "Stakeholder Management", "PMO Governance & Reporting", "Process Improvement & Automation"] },
+    { group: "Leadership & Hiring",  items: ["Team Leadership (15 engineers)", "Technical Hiring & Interviewing", "Offer-to-Join & Onboarding Ownership", "Training & Mentoring"] },
+    /* Technology uses "subgroups" instead of "items" — four labelled lines instead
+       of a wall of chips. Deliberate: it shows genuine technical range for
+       technology-consulting and delivery roles WITHOUT reading like a developer CV,
+       which matters for the MBA transition. Customer Communications comes first
+       because it is the differentiator. Keep this to four short lines — if it grows
+       past that it starts to look like a job application for a coding role. */
+    { group: "Technology", subgroups: [
+      { label: "Customer Communications", items: ["Quadient Inspire Designer", "Interactive", "Scaler", "Content Manager", "OpenText Xpression"] },
+      /* Java, Python, PL/SQL and Perl were proposed and then withdrawn on
+         2026-08-12 — he does not want to claim them. Do not add them back. */
+      { label: "Programming & Data",      items: ["SQL / MySQL", "JavaScript"] },
+      { label: "Web",                     items: ["HTML", "CSS"] },
+      { label: "Platforms & Messaging",   items: ["Linux", "Windows", "RabbitMQ"] }
+    ] },
+    { group: "Tools",                items: ["JIRA", "Confluence", "ServiceNow", "Git (basic)", "Microsoft Excel", "Power BI (Basic)", "Generative AI (Claude)"] },
     // Honest "direction of travel" — things you are actively learning, not claiming.
-    { group: "Currently Building",   items: ["AI Transformation & Enablement", "Cyber Security Fundamentals", "MBA — Strategy & Leadership"] }
+    { group: "Currently Building",   items: ["AI Agents & Automation", "AI Transformation & Enablement", "Cyber Security Fundamentals", "MBA — Strategy & Leadership"] }
   ],
 
 
@@ -301,15 +368,28 @@ window.PORTFOLIO = {
     }
   ],
 
+  /* Certification badges.
+     "mark"   = the 1–2 letters shown in the coloured circle (the issuer's initials).
+     "issuer" = who awarded it.        "name" = what it is called.
+     "url"    = OPTIONAL. Paste the verification link (Credly, Microsoft Learn) and
+                the badge becomes clickable, which recruiters trust far more than a
+                claim. Leave "" and it stays plain text — nothing breaks.
+     A plain string still works too, e.g. "Some Certificate", if you prefer. */
   certifications: [
-    "Microsoft Azure Fundamentals (AZ-900)",
-    "Power BI (Basic)",
-    "Quadient Inspire — Designer",
-    "Quadient Inspire — Scaler",
-    "Quadient Inspire — Interactive",
-    "Claude: AI Fluency for Small Businesses",
-    "Claude Code in Action",
-    "Claude 101"
+    { category: "Cloud & Data", items: [
+      { mark: "MS", issuer: "Microsoft", name: "Azure Fundamentals (AZ-900)",     url: "" },
+      { mark: "MS", issuer: "Microsoft", name: "Power BI (Basic)",                url: "" }
+    ] },
+    { category: "Customer Communications", items: [
+      { mark: "Q",  issuer: "Quadient",  name: "Inspire Designer",                url: "" },
+      { mark: "Q",  issuer: "Quadient",  name: "Inspire Scaler",                  url: "" },
+      { mark: "Q",  issuer: "Quadient",  name: "Inspire Interactive",             url: "" }
+    ] },
+    { category: "AI", items: [
+      { mark: "A",  issuer: "Anthropic", name: "AI Fluency for Small Businesses", url: "" },
+      { mark: "A",  issuer: "Anthropic", name: "Claude Code in Action",           url: "" },
+      { mark: "A",  issuer: "Anthropic", name: "Claude 101",                      url: "" }
+    ] }
   ],
 
   awards: [
@@ -347,9 +427,9 @@ window.PORTFOLIO = {
     kicker:  "Contact",
     text:    "I am open to project management, delivery and technology consulting roles, and to wider management positions where a delivery background transfers well. I pick up new technologies and domains quickly and genuinely enjoy doing so, so I welcome roles that stretch me into unfamiliar ground — including internships and part-time work alongside my MBA.",
     // Short badge line. Leave "" to hide.
-    availability: "MBA at Aston Business School · Birmingham, UK",
+    availability: "Open across the UK · Birmingham & London",
     // Longer availability detail. Leave "" to hide.
-    availabilityNote: "Fully mobile across the UK for permanent roles on completion of my MBA. For internships and part-time work I am available immediately — remotely, or on-site in and around Birmingham."
+    availabilityNote: "Open to roles anywhere in the UK, London included, and willing to relocate for the right one. I am in Birmingham for the MBA from September 2026, and available for internships and part-time work immediately — remotely or on site."
   },
 
 

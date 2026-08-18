@@ -268,11 +268,18 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
   display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.85fr);
   gap:clamp(28px,5vw,64px);align-items:center;
 }
+.hero__eyebrows{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .hero__eyebrow{
   display:inline-flex;align-items:center;gap:9px;
   font-size:.86rem;font-weight:500;color:var(--muted);
   padding:6px 14px 6px 11px;border:1px solid var(--line);border-radius:var(--r-pill);
   background:var(--surface);
+}
+/* Availability pill. --accent-text on --surface is an already-measured AA pair
+   (same as .tl__period and .pills li:hover), so this adds no new colour risk. */
+.hero__eyebrow--avail{
+  padding:6px 14px;color:var(--accent-text);font-weight:600;
+  border-color:color-mix(in srgb,var(--accent) 34%,var(--line));
 }
 .dot{
   width:7px;height:7px;border-radius:50%;background:#22c55e;flex:none;
@@ -316,15 +323,48 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
   display:grid;place-items:center;
   position:relative;
 }
-.portrait img{width:100%;height:100%;object-fit:cover}
+/* The photo is landscape (1024x683) but the frame is portrait 4/5, so "cover"
+   shows only the middle ~53% of the width. Measured head centre is at 46.6% of
+   the image, so a plain centre crop leaves him sitting left. 43% centres him.
+   If the photo is ever replaced, re-measure or reset this to "center". */
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:43% center}
 .portrait__initials{
   font-size:clamp(2.6rem,6vw,3.6rem);font-weight:800;letter-spacing:-.04em;
   color:var(--muted);opacity:.5;
 }
 
+/* -------------------------- career direction ----------------------------
+   Three stages showing Technology -> Delivery -> Transformation. The arrow is
+   decorative and desktop-only; the numbered steps carry the order on their own,
+   so nothing is lost when it is hidden.                                     */
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.stage{
+  position:relative;padding:24px;
+  border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.stage:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--line-strong)}
+.stage__step{
+  display:grid;place-items:center;width:30px;height:30px;border-radius:50%;
+  font-size:.8rem;font-weight:800;
+  background:var(--accent);color:var(--accent-ink);margin-bottom:13px;
+}
+.stage__label{font-size:1.04rem;font-weight:700;letter-spacing:-.02em}
+.stage__detail{margin-top:6px;font-size:.9rem;color:var(--ink-soft);line-height:1.55}
+@media (min-width:861px){
+  .stage:not(:last-child)::after{
+    content:"→";position:absolute;top:50%;right:-13px;transform:translateY(-50%);
+    color:var(--muted);font-size:1rem;line-height:1;
+  }
+}
+.stages__note{margin-top:clamp(24px,3vw,34px);display:grid;gap:12px;max-width:78ch}
+.stages__note p{color:var(--ink-soft);font-size:1rem;line-height:1.65}
+
 /* ----------------------------- metrics ---------------------------------- */
+/* Six tiles laid out 3 + 3. If you change how many metrics you list, keep the
+   count a multiple of 3 or the last row will look unbalanced. */
 .metrics{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
   gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;
   margin-top:clamp(44px,7vw,76px);
@@ -345,8 +385,10 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
    has its own visible number and caption.
    ------------------------------------------------------------------------ */
 .gauges{margin:0;padding:0}
+/* auto-fit rather than a fixed count, so adding or removing a dial in
+   content.js can never leave a broken or lopsided grid. */
 .gauges__grid{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
   gap:clamp(20px,3vw,34px);
 }
 .gauge{
@@ -399,7 +441,9 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
 .gauges__table td:first-child{font-weight:500;color:var(--ink)}
 
 @media (max-width:900px){
-  .gauges__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+  /* Columns are left to auto-fit above — overriding the count here is what used
+     to leave an orphaned dial when the number of dials changed. */
+  .gauges__grid{gap:26px}
 }
 @media (max-width:460px){
   .gauges__grid{grid-template-columns:1fr}
@@ -528,6 +572,13 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
 .tl__points li::before{
   content:"";position:absolute;left:0;top:.66em;width:5px;height:5px;border-radius:50%;background:var(--line-strong);
 }
+/* Technology tags per role. Same token pair as .tags li, already AA-verified. */
+.tl__tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tl__tech li{
+  font-size:.735rem;font-weight:500;color:var(--muted);
+  padding:4px 10px;border-radius:var(--r-sm);
+  background:var(--surface-2);border:1px solid var(--line);
+}
 
 /* ----------------------------- skills ----------------------------------- */
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));gap:16px}
@@ -546,6 +597,15 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
   padding:5px 12px;border-radius:var(--r-pill);
   background:var(--surface-2);border:1px solid var(--line);
 }
+/* Sub-grouped skills — see the Technology group in content.js. Labelled lines
+   instead of chips, which keeps technical breadth scannable rather than making
+   it read as a wall of tags. */
+.skillset__sub + .skillset__sub{margin-top:13px}
+.skillset__sublabel{
+  font-size:.71rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:3px;
+}
+.skillset__subitems{font-size:.855rem;color:var(--ink-soft);line-height:1.55}
 
 /* ----------------------------- credentials ------------------------------ */
 .credentials{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(26px,4vw,52px)}
@@ -581,18 +641,60 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
   font-size:.755rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:var(--accent-text);margin-bottom:14px;
 }
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chips li{
-  font-size:.845rem;color:var(--ink-soft);
-  padding:6px 12px;border-radius:var(--r-sm);
-  background:var(--surface);border:1px solid var(--line);
-  transition:border-color .25s var(--ease), color .25s var(--ease);
-}
-.chips li:hover{border-color:var(--accent-text);color:var(--accent-text)}
 .awards{display:grid;gap:12px}
 .awards li{display:grid;gap:3px}
 .awards strong{font-size:.965rem;font-weight:700;letter-spacing:-.015em}
 .awards span{font-size:.885rem;color:var(--muted)}
+
+/* ------------------------ certification badges --------------------------
+   Full-width grid below the education / recognition row. Each badge is an
+   issuer mark plus the certification name. Token pairs reused from
+   .edu__badge (accent-ink on accent) and .awards span (muted on surface),
+   both already WCAG AA verified. Only badges with a "url" get a hover lift,
+   so a non-clickable badge never pretends to be interactive.              */
+.certs{margin-top:clamp(34px,5vw,54px)}
+.certs__title{
+  font-size:.755rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent-text);margin-bottom:16px;
+}
+/* Category bands within the certification block, so eight badges can be scanned
+   by type rather than read one by one. */
+.certs__cat + .certs__cat{margin-top:20px}
+.certs__catlabel{
+  font-size:.71rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:9px;
+}
+.certs__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:12px}
+.certs__grid li{display:flex}
+.cert{
+  position:relative;width:100%;display:flex;align-items:center;gap:14px;
+  padding:15px 17px;border:1px solid var(--line);border-radius:var(--r-md);
+  background:var(--surface);
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+/* Hexagonal seal — the shape credential platforms (Credly and similar) use, so
+   it reads instantly as a credential rather than as a text chip. Drawn with
+   clip-path, so there are no logo images to host, licence or keep in sync. */
+.cert__seal{
+  --seal:var(--accent);
+  flex:none;width:42px;height:46px;display:grid;place-items:center;
+  background:linear-gradient(160deg,var(--seal),color-mix(in srgb,var(--seal) 70%,#000));
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+}
+/* Issuer colours. Each is verified at or above 4.5:1 against the white seal
+   text, and colour carries no meaning on its own — the initials and the issuer
+   name are both present — so this stays colourblind-safe. */
+.cert[data-issuer="Microsoft"] .cert__seal{--seal:#0b5cab}
+.cert[data-issuer="Quadient"]  .cert__seal{--seal:#0f766e}
+.cert[data-issuer="Anthropic"] .cert__seal{--seal:#a2442a}
+.cert__sealtext{font-size:.78rem;font-weight:800;letter-spacing:-.02em;color:#fff}
+.cert__body{min-width:0;display:grid;gap:2px}
+.cert__name{font-size:.9rem;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.cert__issuer{font-size:.75rem;color:var(--muted)}
+a.cert{text-decoration:none;color:inherit}
+/* Only a badge with a verification URL gets the arrow and the hover lift. */
+a.cert::after{content:"↗";position:absolute;top:9px;right:12px;font-size:.78rem;color:var(--muted)}
+a.cert:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--accent-text)}
 
 /* ----------------------------- beyond ----------------------------------- */
 .beyond{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:16px}
@@ -635,6 +737,14 @@ html[data-theme="dark"] .theme-toggle__moon{opacity:1;transform:none}
 .footer{border-top:1px solid var(--line);padding:26px 0;background:var(--bg)}
 .footer__inner{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
 .footer p{font-size:.875rem;color:var(--muted)}
+/* Contact links sit on the same single row as the copyright line, which reads as
+   a normal footer. An earlier version stacked them above a divider and looked
+   like an extra section rather than a footer. */
+.footer__contact{display:flex;flex-wrap:wrap;gap:9px 20px;align-items:center}
+.footer__contact:empty{display:none}
+.footer__contact li{font-size:.875rem;color:var(--muted)}
+.footer__contact a{color:var(--muted);text-decoration:none;transition:color .25s var(--ease)}
+.footer__contact a:hover{color:var(--accent-text);text-decoration:underline}
 
 /* ----------------------------- reveal -----------------------------------
    Scoped to html.js so that if JavaScript is disabled or fails to load,
@@ -667,12 +777,17 @@ html.js [data-reveal-delay="6"]{transition-delay:.42s}
   .hero__inner{grid-template-columns:1fr}
   .hero__aside{order:-1;justify-content:flex-start}
   .portrait{max-width:190px}
+  .stages{grid-template-columns:1fr}
 }
 @media (max-width:560px){
   .nav__cv{display:none}
   .metrics{grid-template-columns:1fr}
   .hero__cta,.contact__actions{flex-direction:column;align-items:stretch}
   .hero__cta .btn,.contact__actions .btn{width:100%}
+  /* On a phone these are full-width and stacked, so a fourth button pushes the
+     metrics strip off the first screen. Email is already a full-width CTA in the
+     contact section and a link in the contact list, so it goes here, not there. */
+  #heroEmail{display:none}
   .case__head{grid-template-columns:1fr;gap:16px}
   .case__toggle{justify-self:start}
 }

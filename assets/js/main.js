@@ -134,6 +134,19 @@
     if (eyebrow) eyebrow.hidden = true;
   }
 
+  // Second hero pill — availability. Recruiters look for this first, so it sits
+  // in the opening line. Removed entirely when the field is empty.
+  (function renderAvailabilityBadge() {
+    var badge = q("[data-hero-availability]");
+    if (!badge) return;
+    if (has(basics.availabilityBadge)) {
+      badge.textContent = basics.availabilityBadge;
+      badge.hidden = false;
+    } else {
+      badge.remove();
+    }
+  })();
+
   // CV buttons
   [q("#navCv"), q("#heroCv")].filter(Boolean).forEach(function (a) {
     if (has(basics.cvUrl)) {
@@ -353,6 +366,49 @@
     section.hidden = false;
   })();
 
+  /* --------------------------- career direction --------------------------- */
+
+  (function renderDirection() {
+    var section = q("[data-direction]");
+    if (!section) return;
+
+    var cd = C.careerDirection || {};
+    var stages = list(cd.stages).filter(function (s) { return s && has(s.label); });
+    var paras  = list(cd.paragraphs).filter(has);
+
+    // Nothing to say — drop the section rather than leave an empty heading.
+    if (!stages.length && !paras.length) { section.remove(); return; }
+
+    setText("[data-dir-kicker]", cd.kicker);
+    setText("[data-dir-heading]", cd.heading);
+
+    var ol = q("[data-dir-stages]");
+    if (ol) {
+      if (!stages.length) {
+        ol.remove();
+      } else {
+        stages.forEach(function (s, i) {
+          ol.appendChild(h("li", {
+            class: "stage",
+            attrs: { "data-reveal": true, "data-reveal-delay": String(Math.min(i + 1, 6)) }
+          }, [
+            h("span", { class: "stage__step", text: String(i + 1), attrs: { "aria-hidden": "true" } }),
+            h("h3", { class: "stage__label", text: s.label }),
+            has(s.detail) ? h("p", { class: "stage__detail", text: s.detail }) : null
+          ]));
+        });
+      }
+    }
+
+    var body = q("[data-dir-body]");
+    if (body) {
+      if (!paras.length) body.remove();
+      else paras.forEach(function (p) { body.appendChild(h("p", { text: p })); });
+    }
+
+    section.hidden = false;
+  })();
+
   /* ------------------------------ about ---------------------------------- */
 
   setText("[data-about-kicker]", (C.about || {}).kicker);
@@ -392,6 +448,9 @@
     if (!items.length) {
       var section = q("#work");
       if (section) section.remove();
+      // Nothing left to jump to, so remove every link pointing at it — the hero
+      // "View my work" button and both nav menus.
+      qa('a[href="#work"]').forEach(function (a) { a.remove(); });
       return;
     }
 
@@ -509,6 +568,18 @@
         pts.forEach(function (p) { ul.appendChild(h("li", { text: p })); });
         li.appendChild(ul);
       }
+
+      // Technologies and tools for this role. Omitted cleanly if the list is empty.
+      var tech = list(job.tech).filter(has);
+      if (tech.length) {
+        var techUl = h("ul", {
+          class: "tl__tech",
+          attrs: { "aria-label": "Technologies and tools used in this role" }
+        });
+        tech.forEach(function (t) { techUl.appendChild(h("li", { text: t })); });
+        li.appendChild(techUl);
+      }
+
       ol.appendChild(li);
     });
   })();
@@ -528,12 +599,34 @@
       return;
     }
     groups.forEach(function (g, i) {
-      var ul = h("ul");
-      list(g.items).filter(has).forEach(function (it) { ul.appendChild(h("li", { text: it })); });
+      var body = [];
+      var subs = list(g.subgroups);
+
+      if (subs.length) {
+        // Labelled lines rather than chips. Keeps a broad list scannable instead of
+        // turning it into a wall of tags.
+        subs.forEach(function (s) {
+          var subItems = list(s.items).filter(has);
+          if (!subItems.length) return;
+          body.push(h("div", { class: "skillset__sub" }, [
+            has(s.label) ? h("p", { class: "skillset__sublabel", text: s.label }) : null,
+            h("p", { class: "skillset__subitems", text: subItems.join(" • ") })
+          ]));
+        });
+      } else {
+        var items = list(g.items).filter(has);
+        if (items.length) {
+          var ul = h("ul");
+          items.forEach(function (it) { ul.appendChild(h("li", { text: it })); });
+          body.push(ul);
+        }
+      }
+
+      if (!body.length) return;   // an emptied group leaves no stray heading behind
       wrap.appendChild(h("div", {
         class: "skillset",
         attrs: { "data-reveal": true, "data-reveal-delay": String(Math.min(i + 1, 6)) }
-      }, [h("h3", { text: g.group || "" }), ul]));
+      }, [h("h3", { text: g.group || "" })].concat(body)));
     });
   })();
 
@@ -564,14 +657,79 @@
       }
     }
 
-    var certsUl = q("[data-certs]");
-    var certs = list(C.certifications).filter(has);
-    if (certsUl) {
-      if (!certs.length) {
+    var certsHost = q("[data-certs]");
+    if (certsHost) {
+      // Builds one badge. Accepts {mark, issuer, name, url} or a plain string, so
+      // the older flat string format still works if it is ever pasted back in.
+      var buildBadge = function (c) {
+        var cert = typeof c === "string" ? { name: c } : c;
+        if (!cert || !has(cert.name)) return null;
+
+        var mark = has(cert.mark) ? cert.mark
+          : (has(cert.issuer) ? cert.issuer.slice(0, 1).toUpperCase() : "•");
+
+        var inner = [
+          // Hexagonal seal — the shape credential platforms use, drawn in CSS so
+          // there are no image files to host, licence or keep in sync.
+          h("span", { class: "cert__seal", attrs: { "aria-hidden": "true" } }, [
+            h("span", { class: "cert__sealtext", text: mark })
+          ]),
+          h("span", { class: "cert__body" }, [
+            h("span", { class: "cert__name", text: cert.name }),
+            has(cert.issuer) ? h("span", { class: "cert__issuer", text: cert.issuer }) : null
+          ])
+        ];
+
+        // A verification URL turns the badge into a claim a recruiter can check.
+        var card = has(cert.url)
+          ? h("a", {
+              class: "cert cert--link",
+              attrs: {
+                href: cert.url, target: "_blank", rel: "noopener noreferrer",
+                "data-issuer": has(cert.issuer) ? cert.issuer : null,
+                "aria-label": "Verify " + cert.name + (has(cert.issuer) ? " from " + cert.issuer : "") + " (opens in a new tab)"
+              }
+            }, inner)
+          : h("span", { class: "cert", attrs: { "data-issuer": has(cert.issuer) ? cert.issuer : null } }, inner);
+
+        return h("li", {}, [card]);
+      };
+
+      var buildGrid = function (items) {
+        var ul = h("ul", { class: "certs__grid" });
+        var n = 0;
+        list(items).forEach(function (c) {
+          var li = buildBadge(c);
+          if (li) { ul.appendChild(li); n++; }
+        });
+        return n ? ul : null;
+      };
+
+      var entries = list(C.certifications);
+      // Grouped {category, items} shape if present, otherwise one flat grid.
+      var grouped = entries.filter(function (e) {
+        return e && has(e.category) && list(e.items).length;
+      });
+      var renderedAny = false;
+
+      if (grouped.length) {
+        grouped.forEach(function (cat) {
+          var grid = buildGrid(cat.items);
+          if (!grid) return;
+          renderedAny = true;
+          certsHost.appendChild(h("div", { class: "certs__cat" }, [
+            h("p", { class: "certs__catlabel", text: cat.category }),
+            grid
+          ]));
+        });
+      } else {
+        var flat = buildGrid(entries);
+        if (flat) { renderedAny = true; certsHost.appendChild(flat); }
+      }
+
+      if (!renderedAny) {
         var cw = q("[data-certs-wrap]");
         if (cw) cw.remove();
-      } else {
-        certs.forEach(function (c) { certsUl.appendChild(h("li", { text: c })); });
       }
     }
 
@@ -659,6 +817,34 @@
 
   setText("[data-footer-note]", settings.footerNote);
   setText("[data-year]", String(new Date().getFullYear()));
+
+  // Footer contact links. Driven by the same `basics` fields as the contact
+  // section, so the two can never drift apart. Empty fields render nothing.
+  (function renderFooterContact() {
+    var ul = q("[data-footer-contact]");
+    if (!ul) return;
+
+    var rows = [];
+    if (has(basics.email))    rows.push({ label: basics.email, href: "mailto:" + basics.email });
+    if (has(basics.phone))    rows.push({ label: basics.phone, href: "tel:" + basics.phone.replace(/[^\d+]/g, "") });
+    if (has(basics.linkedin)) rows.push({ label: "LinkedIn", href: basics.linkedin, external: true });
+    if (has(basics.github))   rows.push({ label: "GitHub",   href: basics.github,   external: true });
+    if (has(basics.location)) rows.push({ label: basics.location, href: "" });
+
+    if (!rows.length) { ul.remove(); return; }
+
+    rows.forEach(function (r) {
+      var inner;
+      if (r.href) {
+        var attrs = { href: r.href };
+        if (r.external) { attrs.target = "_blank"; attrs.rel = "noopener noreferrer"; }
+        inner = h("a", { text: r.label, attrs: attrs });
+      } else {
+        inner = h("span", { text: r.label });
+      }
+      ul.appendChild(h("li", {}, [inner]));
+    });
+  })();
 
   /* ======================================================================
      MOTION
