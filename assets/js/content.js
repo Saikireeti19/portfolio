@@ -194,7 +194,7 @@ window.PORTFOLIO = {
       title:   "Legacy Platform Migration for a Global Insurer",
       client:  "Chubb (UK & Australia)",
       org:     "Cognizant",
-      period:  "2025 — Present",
+      period:  "2025 — Sep 2026",
       role:    "Programmer Analyst — acting project manager for the migration",
       summary: "Migrated an insurer's legacy communication platform onto a modern stack — delivered with zero UAT defects at go-live.",
       context: "Chubb's customer communications ran on a legacy Xpression platform that was slow to change and inconsistent in branding. It needed migrating to Quadient without disrupting live customer communications.",
@@ -216,7 +216,7 @@ window.PORTFOLIO = {
       title:   "Scaling the Team Behind the Delivery",
       client:  "Internal — Technology Competency",
       org:     "Cognizant",
-      period:  "2025 — Present",
+      period:  "2025 — Sep 2026",
       role:    "Programmer Analyst — resourcing & onboarding POC alongside delivery",
       summary: "Ran hiring end-to-end for the practice, then acted as the single point of contact that carried every new joiner from offer roll-out through to day one.",
       context: "Delivery commitments were growing faster than the team could staff them, and unfilled roles were putting billable project work at risk. Accepted offers were also the fragile part — candidates go quiet between offer and joining, and a drop-out means starting the whole hire again.",
@@ -270,7 +270,10 @@ window.PORTFOLIO = {
       role:    "Programmer Analyst — Delivery & Resourcing Lead",
       company: "Cognizant",
       meta:    "Client: Chubb (UK & Australia) · India",
-      period:  "Jul 2025 — Present",
+      /* Cognizant ends Sep 2026, when the MBA starts. Written as a closed date
+         range rather than "Present" on purpose: he loses access to update this
+         site, so nothing here may depend on being edited later. */
+      period:  "Jul 2025 — Sep 2026",
       points: [
         "Led a 15-member team on the Chubb legacy platform migration, delivered with zero UAT defects at go-live.",
         "Built a PDPX→JLD converter that removed the manual rebuild step — around 30% less development time and 30% faster form delivery.",
