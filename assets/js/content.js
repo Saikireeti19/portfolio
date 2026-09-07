@@ -80,8 +80,11 @@ window.PORTFOLIO = {
      2. THE ROLES YOU ARE TARGETING  (small pills in the hero)
      These are roles you WANT — not roles you have already held.
      ========================================================================== */
-  // Shown above the chips so nobody mistakes them for roles already held.
-  targetRolesLabel: "Targeting",
+  /* Shown above the chips so nobody mistakes them for roles already held.
+     "Open to roles in" rather than "Targeting": it still cannot be read as a
+     job title he holds, but it invites a recruiter whose vacancy is adjacent
+     instead of reading like a closed list of five. */
+  targetRolesLabel: "Open to roles in",
 
   targetRoles: [
     "Technical Project Manager",
@@ -161,6 +164,13 @@ window.PORTFOLIO = {
     ],
     paragraphs: [
       "My career has moved from hands-on development in customer communications technology into technical delivery, project coordination and business transformation.",
+      /* This paragraph is the openness signal, and it sits HIGH on the page on
+         purpose. The same message used to live only in the contact block at the
+         very bottom, where a 20-second scan never reached it. It is written as
+         evidence of adaptability rather than as "open to anything" — the latter
+         reads to recruiters as unfocused, the former reads as capable. Every
+         claim in it is already proven elsewhere on this page. */
+      "Domain and toolset have never been the constraint. I moved a global insurer off Xpression onto Quadient, stepped from hands-on development into PMO and delivery leadership, ran hiring for my practice, and brought automation and AI tooling into how the team works. I am open to roles across delivery, project management, consulting and analysis — and I pick up a new stack quickly.",
       "My MBA at Aston Business School (September 2026 to September 2027) builds the strategic, leadership and commercial perspective that technology project management and consulting demand."
     ]
   },
