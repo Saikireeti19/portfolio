@@ -1,9 +1,7 @@
 # How to change anything on your website
 
-**You do not need to know how to code.** Almost everything on this site lives in
-one file, written in plain English with comments.
-
-That file is:
+**You do not need to know how to code.** Almost everything lives in one file,
+written in plain English with comments:
 
 ```
 assets/js/content.js
@@ -17,57 +15,79 @@ assets/js/content.js
 2. Keep every comma `,` and every `{ }` `[ ]` exactly where it is.
 3. To hide something, leave it empty: `""` — or empty a whole list: `[]`
 
-That's it. If you follow those three rules you cannot break the site.
+Follow those three and you cannot break the site.
+
+---
+
+## The 4th rule — never write anything that goes out of date
+
+This one matters more than the other three, because **you may not be able to edit
+this site later**. Write everything so it stays true on its own.
+
+| ❌ Don't write | ✅ Write instead |
+|---|---|
+| "I begin my MBA in September 2026" | "My MBA runs from September 2026 to September 2027" |
+| "Jul 2025 – Present" | "Jul 2025 – Sep 2026" |
+| "currently studying", "recently joined" | "MBA Candidate", or a dated range |
+| "I am in Birmingham" *(before you move)* | "I relocate to Birmingham in late September 2026" |
+
+If you start a new job later, **add a new entry** to the timeline. Don't change
+the Cognizant one back to "Present".
 
 ---
 
 ## How to make an edit (no software needed)
 
 1. Go to your repository on GitHub.
-2. Click into `assets` → `js` → **`content.js`**
-3. Click the **pencil icon** (✏️ Edit this file) at the top right.
+2. Click `assets` → `js` → **`content.js`**
+3. Click the **pencil icon** (✏️ Edit this file), top right.
 4. Change your text.
-5. Scroll to the bottom, type a short note like `Update headline`, and click
-   **Commit changes**.
-6. Wait about **1 minute**, then refresh your live site. Done.
+5. Scroll down, type a short note like `Update headline`, click **Commit changes**.
+6. Wait about **1 minute**, then refresh your live site.
+
+**If you don't see your change:** the browser caches files for 10 minutes. Hard
+refresh with `Ctrl` + `F5`, or just wait.
 
 ### If the page ever goes blank
 
 You broke rule 2 (a missing comma or quote). Fix it in seconds:
 
-1. Go to the repository → click **History** (or the clock icon).
-2. Find the commit **before** your change and open it.
-3. Click the `...` menu → **View file** → copy everything.
-4. Edit `content.js` and paste it back over the top. Commit.
+1. Repository → **History** (clock icon).
+2. Open the commit **before** your change.
+3. `...` menu → **View file** → copy everything.
+4. Edit `content.js`, paste it over the top, commit.
 
-Your site is never permanently broken — every old version is saved.
+Nothing is ever permanently broken — every old version is saved.
 
 ---
 
-## Common jobs — exactly where to look
+## Where everything is
 
-Open `content.js` and find the numbered section.
-
-| I want to change… | Go to section | Field |
+| I want to change… | Section | Field |
 |---|---|---|
-| My name / the navbar name | 1. THE BASICS | `fullName`, `shortName` |
+| My name / navbar name | 1. THE BASICS | `fullName`, `shortName` |
 | The line under my name | 1. THE BASICS | `headline` |
 | The paragraph in the hero | 1. THE BASICS | `intro` |
-| The pill at the very top | 1. THE BASICS | `status` |
+| The first pill at the top | 1. THE BASICS | `status` |
+| **The "Open to UK opportunities" pill** | 1. THE BASICS | `availabilityBadge` |
 | My email | 1. THE BASICS | `email` |
-| **Add my phone number** | 1. THE BASICS | `phone` (currently empty) |
+| **Add my phone number** | 1. THE BASICS | `phone` *(empty)* |
 | My LinkedIn link | 1. THE BASICS | `linkedin` |
-| Add a GitHub link | 1. THE BASICS | `github` (currently empty) |
-| Google / LinkedIn preview text | 1. THE BASICS | `pageTitle`, `metaDesc` |
-| The roles I'm targeting | 2. THE ROLES | `targetRoles` list |
-| The 4 big numbers | 3. HEADLINE NUMBERS | `metrics` |
+| A GitHub link | 1. THE BASICS | `github` *(deliberately empty)* |
+| Google / share preview text | 1. THE BASICS | `pageTitle`, `metaDesc` |
+| My photo | — | see **Replace your photo** below |
+| The roles I'm open to | 2. THE ROLES | `targetRoles`, `targetRolesLabel` |
+| **The 6 big numbers** | 3. HEADLINE NUMBERS | `metrics` |
 | The % dials | 3b. PROJECT IMPACT | `impact.items` |
+| **The Technology → Delivery → Transformation section** | 3c. CAREER DIRECTION | `stages`, `paragraphs` |
 | My "About" paragraphs | 4. ABOUT | `paragraphs` |
 | The 3 "how I work" boxes | 4. ABOUT | `principles` |
 | A case study | 5. CASE STUDIES | `caseStudies` |
 | My job history | 6. CAREER TIMELINE | `experience` |
+| **The tools listed under each job** | 6. CAREER TIMELINE | `tech` in each job |
 | My skills | 7. SKILLS | `skills` |
-| Education / certifications | 8. EDUCATION | `education`, `certifications` |
+| Education | 8. EDUCATION | `education` |
+| **Certificate badges** | 8. EDUCATION | `certifications` |
 | Volunteering / outreach | 9. BEYOND WORK | `beyond` |
 | Availability wording | 10. CONTACT | `availability`, `availabilityNote` |
 | The accent colour | 11. LOOK & FEEL | `accent` |
@@ -75,103 +95,197 @@ Open `content.js` and find the numbered section.
 
 ---
 
-## Step-by-step for the things you'll actually do
+## Replace your photo — read this bit properly
 
-### Add your UK phone number (once you have one)
+Two steps, and **the second one is easy to miss.**
 
-Find this in section 1 and put your number between the quotes:
+### Step 1 — upload it
 
-```js
-phone:     "",          →      phone:     "+44 7xxx xxxxxx",
+Put your new photo in `assets/img/` named **exactly** `profile.jpg` (overwrite the
+old one).
+
+- **Portrait shape works best** (taller than wide), around 800×1000 pixels.
+- Keep it under about 400 KB so the site stays fast.
+- If the file is ever missing, the site shows your initials instead — it won't break.
+
+### Step 2 — fix the crop, or your face will sit off-centre
+
+The photo frame is portrait-shaped (4:5) but photos are often landscape, so the
+site has to crop the sides. **It currently crops to a position tuned to your old
+photo**, measured from where your head actually was.
+
+Open `assets/css/styles.css`, find this line (search for `object-position`):
+
+```css
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:43% center}
 ```
 
-Leave it as `""` and the phone simply doesn't appear anywhere.
+**With a new photo, change `43%` to `center`:**
 
-### Replace your photo
+```css
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center}
+```
 
-Upload your new photo into `assets/img/` and name it **exactly** `profile.jpg`
-(overwrite the old one). Nothing else to change.
+That is the safe default. Then look at the live site:
 
-- Portrait shape works best (taller than wide), around 800×1000 pixels.
-- Keep it under about 400 KB so the site stays fast.
-- If the file is missing, the site automatically shows your initials instead.
+- Face too far **left**? Lower the number — try `40%`, then `35%`.
+- Face too far **right**? Raise it — try `55%`, then `60%`.
+- `50%` is dead centre. Anything between `0%` and `100%` is valid.
 
-### Replace your CV
+**Or avoid it entirely:** crop your photo to a **portrait 4:5 shape before
+uploading** (e.g. 800×1000), with your face slightly above the middle. Then
+`object-position:center` is correct and you never touch this again.
 
-Upload the new PDF into `assets/`, then update this line in section 1 to match
-your file name exactly:
+---
+
+## Replace your CV
+
+Upload the new PDF into `assets/`, then make this line in section 1 match your
+file name **exactly**:
 
 ```js
 cvUrl:     "assets/Saikireeti_Yenugula_CV.pdf",
 ```
 
-### Change one of the % dials
+⚠️ The CV on the site is a copy of `Resume_1_PM_Delivery_Consulting` from your
+`Documents/Resume/` folder, and **the two are kept saying the same things**. If you
+change a number on the site, change it on the CV too, or a recruiter reading both
+sees a contradiction.
 
-In section 3b, each dial looks like this:
+---
+
+## Add a verification link to a certificate
+
+**This is the most valuable 10 minutes left on the site.** Right now your eight
+certificate badges are claims. With a link they become *checkable*, which
+recruiters trust far more.
+
+Get the link from Credly (Microsoft) or wherever the certificate lives, then paste
+it into that badge's `url`:
+
+```js
+{ mark: "MS", issuer: "Microsoft", name: "Azure Fundamentals (AZ-900)", url: "" },
+                                                                        ↑ paste here
+```
+
+The badge then becomes clickable with a small ↗ arrow. Leave `url` empty and it
+stays plain text — nothing breaks either way.
+
+---
+
+## Add your UK phone number
+
+Section 1 — put it between the quotes:
+
+```js
+phone:     "",          →      phone:     "+44 7xxx xxxxxx",
+```
+
+It then appears **automatically in two places** — the contact block and the
+footer — as a tappable link on a phone. Leave it `""` and both stay hidden.
+
+---
+
+## The six big numbers
+
+Section 3. Keep the count a **multiple of 3** (currently 6, shown as 3 + 3) or the
+last row looks unbalanced.
+
+```js
+{ value: "0", suffix: "", label: "UAT defects at go-live on a major migration" },
+```
+
+`value` can be text like `"30–40"`. `suffix` is small text after it, like `"yrs"`
+or `"%"`.
+
+**Only put numbers here you can defend in an interview.** Two striking, true
+numbers beat five vague ones — and an invented one is worse than none.
+
+---
+
+## Change or add a % dial
+
+Section 3b. Each dial:
 
 ```js
 {
-  label: "Revenue growth",
-  value: 60,
-  note:  "Higher delivery throughput grew the account's revenue…"
+  label: "Faster form delivery",
+  value: 30,
+  note:  "The converter removed the manual rebuild step…"
 },
 ```
 
-`value` is a plain number (no `%` sign — the site adds that).
+`value` is a plain number — the site adds the `%`. Copy a whole `{ … },` block to
+add one, delete a block to remove one. **Keep at least one.** The layout adjusts
+itself to any number of dials.
 
-### Add a new dial
+---
 
-Copy one whole `{ … },` block including the comma, paste it below, and edit it.
-Delete a block to remove a dial. **Keep at least one.**
+## Add a case study
 
-### Add a new case study
+Section 5. Copy one entire `{ … },` block and edit the copy, keeping the field
+names. `results` are the big coloured numbers; `tags` are the chips at the bottom.
 
-In section 5, copy one entire `{ … },` block and edit the copy. Keep the same
-field names. `results` shows the big coloured numbers; `tags` are the little
-chips at the bottom.
+---
 
-### Hide a whole section
+## Hide a whole section
 
-Empty its list. For example, to remove "Beyond the Day Job" entirely:
+Empty its list:
 
 ```js
 beyond: [],
 ```
 
-The section disappears cleanly, including its menu link.
+The section disappears cleanly, **including its menu links**.
 
 ---
 
-## Asking an AI to make changes for you
+## Change the share image
 
-This works well. Give the AI (ChatGPT, Claude, Gemini…) your repository link and
-a prompt like:
+`assets/img/og-image.jpg` is what appears when your link is shared on LinkedIn,
+WhatsApp or Slack. To replace it, upload a new **1200 × 630** JPG with that exact
+name. If you change your name or headline on the site, the image won't update
+itself — it's a picture, so it has to be remade.
+
+---
+
+## Asking another AI to make changes
+
+This works well. Give it your repository link and this prompt:
 
 ```
 Here is my portfolio website repository: <paste your repo link>
 
-Please read AI-GUIDE.md first — it explains the architecture and the rules.
+Please read AI-GUIDE.md in full before changing anything. It contains the
+architecture, the confirmed facts, the content rules and ten invariants that
+were each a real bug.
 
 I want you to: <describe your change in plain English>
 
-Important: all content lives in assets/js/content.js. Do not invent any facts,
-numbers, employers or certifications about me. If you need a number I have not
-given you, ask me for it.
+Rules you must follow:
+- All content lives in assets/js/content.js. Wording, numbers, sections and
+  ordering are changed there and nowhere else.
+- Never invent any fact about me - no employers, dates, metrics, certifications,
+  clients or tools. If you need a number I have not given you, ask me for it.
+- Never write wording that will go out of date, because I may not be able to
+  edit this site later. Use closed, dated ranges.
+- Keep WCAG AA contrast in both light and dark themes, and keep the content
+  visible if JavaScript fails.
+- Show me the change before pushing it.
 ```
 
-The `AI-GUIDE.md` file in this repository was written specifically so an AI can
-understand the whole project without any explanation from you. It covers the
-architecture, the accessibility rules, and the facts it must not change.
+`AI-GUIDE.md` was written so an AI can understand the whole project with no
+explanation from you — including the traps that make measurements read wrong.
 
 ---
 
 ## Things worth knowing
 
 - **You cannot break it permanently.** Every version is saved in GitHub history.
-- **Nothing is secret in this repo.** Never put passwords or private documents here
-  — it is a public website.
-- The site works in light and dark mode, follows the visitor's system setting,
-  and remembers whatever they choose.
+- **Nothing here is private.** This is a public website — never put passwords,
+  personal documents or anything confidential in this repository.
+- Light and dark mode both work, follow the visitor's system setting, and remember
+  whatever they choose.
 - It works on phones, tablets and desktops, and prints cleanly if a recruiter
   saves it as a PDF.
 - There is no build step. What you commit is what goes live.
