@@ -445,7 +445,10 @@ window.PORTFOLIO = {
     // Short badge line. Leave "" to hide.
     availability: "Open across the UK · Birmingham & London",
     // Longer availability detail. Leave "" to hide.
-    availabilityNote: "Open to roles anywhere in the UK, London included, and willing to relocate for the right one. I am in Birmingham for the MBA from September 2026, and available for internships and part-time work immediately — remotely or on site."
+    /* Says exactly when he can be on site, which is more useful to a recruiter
+       than a vague "available now" — and avoids implying he is already in
+       Birmingham, which he is not until late September 2026. */
+    availabilityNote: "Open to roles anywhere in the UK, London included, and willing to relocate for the right one. I relocate to Birmingham in late September 2026 for the MBA — available for internships and part-time work immediately, remotely now and on site from arrival."
   },
 
 
