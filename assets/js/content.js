@@ -28,7 +28,7 @@ window.PORTFOLIO = {
     headline:  "Technical Project Management | Technology Consulting | AI Transformation",
 
     // The short paragraph in the hero. 2–3 sentences works best.
-    intro:     "Four years delivering enterprise technology across Cognizant, Paragon Customer Communications (UK) and Atos Syntel — project delivery, PMO, migration programmes, production support and stakeholder management. Because I came up through hands-on technical roles, I plan realistically and speak the same language as the engineers I lead. I begin an MBA at Aston Business School in September 2026, moving into project management and technology consulting.",
+    intro:     "Four years delivering enterprise technology across Cognizant, Paragon Customer Communications (UK) and Atos Syntel — project delivery, PMO, migration programmes, production support and stakeholder management. Because I came up through hands-on technical roles, I plan realistically and speak the same language as the engineers I lead. My MBA at Aston Business School runs from September 2026 to September 2027, as I move into project management and technology consulting.",
 
     email:     "saikireeti29@gmail.com",
 
@@ -65,8 +65,11 @@ window.PORTFOLIO = {
     photo:     "assets/img/profile.jpg",
 
     // Browser tab title + Google/LinkedIn preview text
-    pageTitle: "Saikireeti Yenugula — Technology Delivery & Project Management",
-    metaDesc:  "Technology delivery and project management professional with 4 years delivering enterprise technology for major UK insurers and utilities. MBA candidate at Aston University, moving into technology and AI transformation consulting.",
+    /* Title and description are what Google and LinkedIn show in a search result.
+       Lead with the target discipline and the two hardest numbers — this is often
+       the only thing a recruiter reads before deciding whether to click. */
+    pageTitle: "Saikireeti Yenugula — Technical Project Management & Technology Delivery",
+    metaDesc:  "Four years delivering enterprise technology for UK clients. Zero UAT defects at go-live, zero failed deployments, 15 engineers led. MBA candidate, Aston Business School.",
 
     // Set this AFTER your site is live
     siteUrl:   "https://saikireeti19.github.io/portfolio/"
@@ -158,7 +161,7 @@ window.PORTFOLIO = {
     ],
     paragraphs: [
       "My career has moved from hands-on development in customer communications technology into technical delivery, project coordination and business transformation.",
-      "I begin an MBA at Aston Business School in September 2026 to build the strategic, leadership and commercial perspective that technology project management and consulting demand."
+      "My MBA at Aston Business School (September 2026 to September 2027) builds the strategic, leadership and commercial perspective that technology project management and consulting demand."
     ]
   },
 
@@ -173,7 +176,7 @@ window.PORTFOLIO = {
       "Four years across three global firms — Cognizant, Paragon Customer Communications (UK) and Atos Syntel — building and running enterprise customer-communication platforms for major UK insurers and utilities, including Chubb.",
       "I came up through hands-on technical roles, so I know how delivery actually works: requirements, build, test cycles, controlled releases, go-live and support. On the Chubb migration I led a 15-member team to go-live with zero UAT defects — and trained all 15 on the platform from scratch.",
       "I also ran hiring for my practice, and was the named contact every external hire spoke to between accepting an offer and day one. Around 30–40 lateral hires came through that process with me.",
-      "I begin an MBA at Aston Business School in September 2026, moving further into technology consulting and AI-enabled transformation."
+      "My MBA at Aston Business School runs from September 2026 to September 2027, taking me further into technology consulting and AI-enabled transformation."
     ],
     principles: [
       { title: "Delivery, end to end",              text: "I've owned every stage — requirements, build, UAT, release and production support — so the plans I make reflect how the work really happens." },

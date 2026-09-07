@@ -14,11 +14,45 @@
 <meta property="og:title" content="Saikireeti Yenugula — Technology Delivery & Project Management">
 <meta property="og:description" content="Zero UAT defects at go-live on a major UK insurance migration. Zero failed deployments across 10+ releases a day. Four years delivering enterprise technology for UK insurers and utilities, and an MBA candidate at Aston Business School.">
 <meta property="og:url" content="https://saikireeti19.github.io/portfolio/">
+<!-- Absolute URLs are required here: LinkedIn, WhatsApp and Slack fetch the image
+     from their own servers, so a relative path silently fails. -->
+<meta property="og:image" content="https://saikireeti19.github.io/portfolio/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Saikireeti Yenugula — Technical Project Management, Technology Consulting, AI Transformation. Zero UAT defects at go-live, zero failed deployments, 15 engineers led and trained.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://saikireeti19.github.io/portfolio/assets/img/og-image.jpg">
 <meta name="twitter:title" content="Saikireeti Yenugula — Technology Delivery & Project Management">
 <meta name="twitter:description" content="4 years delivering enterprise technology for major UK insurers and utilities. MBA candidate at Aston University, moving into technology and AI transformation consulting.">
 
 <link rel="canonical" href="https://saikireeti19.github.io/portfolio/">
+
+<!-- Structured data, so Google can render the name, photo and links properly in a
+     result. Deliberately omits jobTitle, worksFor and alumniOf: each of those goes
+     stale the moment a role or course changes, and this site cannot be edited
+     later. Only durable facts belong here. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Saikireeti Yenugula",
+  "url": "https://saikireeti19.github.io/portfolio/",
+  "image": "https://saikireeti19.github.io/portfolio/assets/img/og-image.jpg",
+  "email": "mailto:saikireeti29@gmail.com",
+  "description": "Technology delivery and project management professional with four years across Cognizant, Paragon Customer Communications (UK) and Atos Syntel, delivering for UK insurance, banking and utility clients.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Birmingham", "addressCountry": "GB" },
+  "sameAs": ["https://www.linkedin.com/in/saikireeti-yenugula-362950221"],
+  "knowsAbout": [
+    "Project and Programme Management",
+    "Technical Delivery Management",
+    "PMO Governance and Reporting",
+    "Release and Deployment Management",
+    "Requirements Analysis",
+    "Quadient Inspire",
+    "AI-Assisted Delivery"
+  ]
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231e40af'/%3E%3Ctext x='50%25' y='50%25' dy='.35em' text-anchor='middle' font-family='system-ui,sans-serif' font-size='26' font-weight='700' fill='white'%3ESY%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,12 +90,14 @@
     <a class="nav__logo" href="#top" data-logo>Sai Kireeti</a>
 
     <nav class="nav__links" aria-label="Sections">
+      <a href="#direction">Direction</a>
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
       <a href="#impact">Impact</a>
       <a href="#skills">Capabilities</a>
       <a href="#education">Credentials</a>
+      <a href="#beyond">Beyond</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -82,6 +118,7 @@
   </div>
 
   <div class="nav__mobile" id="mobileMenu" hidden>
+    <a href="#direction">Direction</a>
     <a href="#about">About</a>
     <a href="#work">Work</a>
     <a href="#experience">Experience</a>

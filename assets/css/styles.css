@@ -781,9 +781,15 @@ html.js [data-reveal-delay="6"]{transition-delay:.24s}
   .case__grid{grid-template-columns:1fr}
   .case__results{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 }
-@media (max-width:860px){
+/* Measured: nine nav links plus the logo, theme toggle and CV button need about
+   1160px. Below that the burger takes over rather than letting the row overflow.
+   The mobile menu lists every section, so nothing becomes unreachable. If you add
+   or remove a nav link, re-measure this number. */
+@media (max-width:1160px){
   .nav__links{display:none}
   .nav__burger{display:block}
+}
+@media (max-width:860px){
   .hero__inner{grid-template-columns:1fr}
   .hero__aside{order:-1;justify-content:flex-start}
   .portrait{max-width:190px}
