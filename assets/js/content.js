@@ -170,7 +170,7 @@ window.PORTFOLIO = {
          evidence of adaptability rather than as "open to anything" — the latter
          reads to recruiters as unfocused, the former reads as capable. Every
          claim in it is already proven elsewhere on this page. */
-      "Domain and toolset have never been the constraint. I moved a global insurer off Xpression onto Quadient, stepped from hands-on development into PMO and delivery leadership, ran hiring for my practice, and brought automation and AI tooling into how the team works. I am open to roles across delivery, project management, consulting and analysis — and I pick up a new stack quickly.",
+      "Domain and toolset have never been the constraint. I moved a global insurer off Xpression onto Quadient, stepped from hands-on development into PMO and delivery leadership, ran hiring for my practice, and brought automation and AI tooling into how the team works. I am open to roles across delivery, project management, consulting and analysis, and moving towards operations and supply chain — where throughput, capacity planning and process improvement are problems I have already worked on. I pick up a new stack quickly.",
       "My MBA at Aston Business School (September 2026 to September 2027) builds the strategic, leadership and commercial perspective that technology project management and consulting demand."
     ]
   },
@@ -337,26 +337,31 @@ window.PORTFOLIO = {
        list reads as a considered profile rather than a keyword dump. Things a
        recruiter already assumes (Documentation, MS Office) are left out on purpose
        — listing them only dilutes the items that actually matter. */
-    { group: "Project & Delivery Management", items: ["Project & Programme Management", "Full SDLC — requirements → build → UAT → release → support", "Planning, Estimation & Risk Management", "Release Coordination (TEST / UAT / PROD)", "Production Support & Incident Management", "Agile & Waterfall"] },
+    /* Five cards, 24 items. Cut from six cards and 38 on 2026-09-09 because it read
+       as a wall. Rules that keep it that way:
+         - NEVER list anything qualified "(basic)". A recruiter reads "basic" as
+           "not really", and it drags down every strong item beside it. That is why
+           Git (basic) and Power BI (Basic) are gone.
+         - Leave out what is assumed of every candidate (Excel, MS Office, Windows,
+           Documentation). Listing them dilutes the items that matter.
+         - No HTML/CSS/JavaScript here. They pull the reader towards a developer
+           CV, which works against the MBA transition into PM and consulting.
+           They stay on the RESUMES, which are parsed by ATS for keywords —
+           different job, different document.
+         - Don't repeat the card title inside the card ("Project & Programme
+           Management" under a card called that).
+       `subgroups` is still supported by main.js if a group ever needs labelled
+       lines again — it is just not needed at this size. */
+    { group: "Delivery & Project Management", items: ["Full SDLC — requirements → build → UAT → release → support", "Planning, Estimation & Risk Management", "Release Coordination (TEST / UAT / PROD)", "Production Support & Incident Management", "Agile & Waterfall"] },
     { group: "Business Analysis & Governance", items: ["Requirements Analysis", "Stakeholder Management", "PMO Governance & Reporting", "Process Improvement & Automation"] },
     { group: "Leadership & Hiring",  items: ["Team Leadership (15 engineers)", "Technical Hiring & Interviewing", "Offer-to-Join & Onboarding Ownership", "Training & Mentoring"] },
-    /* Technology uses "subgroups" instead of "items" — four labelled lines instead
-       of a wall of chips. Deliberate: it shows genuine technical range for
-       technology-consulting and delivery roles WITHOUT reading like a developer CV,
-       which matters for the MBA transition. Customer Communications comes first
-       because it is the differentiator. Keep this to four short lines — if it grows
-       past that it starts to look like a job application for a coding role. */
-    { group: "Technology", subgroups: [
-      { label: "Customer Communications", items: ["Quadient Inspire Designer", "Interactive", "Scaler", "Content Manager", "OpenText Xpression"] },
-      /* Java, Python, PL/SQL and Perl were proposed and then withdrawn on
-         2026-08-19 — he does not want to claim them. Do not add them back. */
-      { label: "Programming & Data",      items: ["SQL / MySQL", "JavaScript"] },
-      { label: "Web",                     items: ["HTML", "CSS"] },
-      { label: "Platforms & Messaging",   items: ["Linux", "Windows", "RabbitMQ"] }
-    ] },
-    { group: "Tools",                items: ["JIRA", "Confluence", "ServiceNow", "Git (basic)", "Microsoft Excel", "Power BI (Basic)", "Generative AI (Claude)"] },
+    /* Java, Python, PL/SQL and Perl were proposed and then withdrawn on 2026-08-19
+       — he does not want to claim them. Do not add them back. Quadient Inspire
+       leads because it is the genuine differentiator; Linux and RabbitMQ stay
+       because real platform depth is what separates him from a non-technical PM. */
+    { group: "Technology & Tools",   items: ["Quadient Inspire (Designer, Interactive, Scaler, Content Manager)", "OpenText Xpression", "JIRA · Confluence · ServiceNow", "SQL / MySQL", "Linux · RabbitMQ", "Generative AI (Claude)"] },
     // Honest "direction of travel" — things you are actively learning, not claiming.
-    { group: "Currently Building",   items: ["AI Agents & Automation", "AI Transformation & Enablement", "Cyber Security Fundamentals", "MBA — Strategy & Leadership"] }
+    { group: "Currently Building",   items: ["AI Agents & Automation", "AI Transformation & Enablement", "Supply Chain & Operations Management", "Cyber Security Fundamentals", "MBA — Strategy & Leadership"] }
   ],
 
 
@@ -373,7 +378,12 @@ window.PORTFOLIO = {
       period: "Sep 2026 — Sep 2027",
       degree: "MBA — Master of Business Administration",
       school: "Aston Business School, Aston University · Birmingham, UK",
-      detail: "Triple-accredited business school (AACSB, AMBA and EQUIS) — a standard held by fewer than 1% of business schools worldwide. Studying strategy, leadership and transformation."
+      /* Module names verified against the September 2026 intake page:
+         aston.ac.uk/study/courses/mba-full-time-mba/september-2026
+         "Operations Management Transformation" is one of nine CORE modules, so it
+         is compulsory — this is the honest anchor for the supply-chain interest.
+         Note there is NO separate supply chain module on this MBA; do not imply one. */
+      detail: "Triple-accredited business school (AACSB, AMBA and EQUIS) — a standard held by fewer than 1% of business schools worldwide. Core modules span strategy and economics, financial analysis, strategic marketing, leadership, and Operations Management Transformation."
     },
     {
       highlight: false,
